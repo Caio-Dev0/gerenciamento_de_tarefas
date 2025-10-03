@@ -9,10 +9,17 @@ btn_delTarefa.addEventListener("click", removerTarefa)
 function adicionarTarefa(){
     let escopoUl = document.querySelector("ul") // Criei uma váriavel que irá armazenar a tag ul
     let valorInputTarefa = inputTarefa.value // atribui a esta váriavel o valor do input
-    let itemLi = escopoUl.appendChild(document.createElement("li")) // Atribui a váriavel "novaTarefa" o novo elemento "li" criado na "ul" listaTarefas
-    itemLi.innerText = valorInputTarefa;
+    
+    if(valorInputTarefa != ''){
+        let itemLi = escopoUl.appendChild(document.createElement("li")) // Atribui a váriavel "novaTarefa" o novo elemento "li" criado na "ul" listaTarefas
+        itemLi.innerText = valorInputTarefa;
+    }else{
+        alert("Coloque uma tarefa válida")
+    }
+    
     
 }
+
 
 function removerTarefa(){
     let itemLi = document.querySelector("li")
@@ -20,5 +27,4 @@ function removerTarefa(){
 }
 
         
-        
-
+    
