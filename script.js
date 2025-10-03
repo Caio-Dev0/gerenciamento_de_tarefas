@@ -16,7 +16,7 @@ function adicionarTarefa(){
 
 function removerTarefa(){
     let itemLi = document.querySelector("li")
-    itemLi.innerHTML = ''
+    itemLi.remove()
 }
 
         
