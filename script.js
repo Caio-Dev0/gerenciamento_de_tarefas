@@ -1,17 +1,24 @@
-  let btn_tarefa = document.querySelector(".btn") //Este é o botão que está sendo usado para chamar a função "adicionarTarefa"
-        let inputTarefa = document.querySelector("input") // usei o querySelector para resgatar o input
-        btn_tarefa.addEventListener("click", adicionarTarefa) //Evento que dispara a função adicionarTarefa ao ouvir o Click
-        btn_tarefa.addEventListener("clickout")
-        
-        function adicionarTarefa(){
-            let escopoUl = document.querySelector("ul") // Criei uma váriavel que irá armazenar a tag ul
-            let valorInputTarefa = inputTarefa.value // atribui a esta váriavel o valor do input
-            let itemLi = escopoUl.appendChild(document.createElement("li")) // Atribui a váriavel "novaTarefa" o novo elemento "li" criado na "ul" listaTarefas
-            itemLi.innerText = valorInputTarefa;
-            
-        }
+let btn_addTarefa = document.querySelector(".btn-add") //Este é o botão que está sendo usado para chamar a função "adicionarTarefa"
+let btn_delTarefa = document.querySelector(".btn-remove")
 
-        function limparInput(){
-            inputTarefa.innerText = ''
-        }
+let inputTarefa = document.querySelector("input") // usei o querySelector para resgatar o input
+btn_addTarefa.addEventListener("click", adicionarTarefa) //Evento que dispara a função adicionarTarefa ao ouvir o Click
+btn_delTarefa.addEventListener("click", removerTarefa)
+        
+        
+function adicionarTarefa(){
+    let escopoUl = document.querySelector("ul") // Criei uma váriavel que irá armazenar a tag ul
+    let valorInputTarefa = inputTarefa.value // atribui a esta váriavel o valor do input
+    let itemLi = escopoUl.appendChild(document.createElement("li")) // Atribui a váriavel "novaTarefa" o novo elemento "li" criado na "ul" listaTarefas
+    itemLi.innerText = valorInputTarefa;
+    
+}
+
+function removerTarefa(){
+    let itemLi = document.querySelector("li")
+    itemLi.innerHTML = ''
+}
+
+        
+        
 
