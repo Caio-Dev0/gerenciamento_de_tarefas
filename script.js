@@ -4,6 +4,7 @@ let btn_delTarefa = document.querySelector(".btn-remove")
 let inputTarefa = document.querySelector("input") // usei o querySelector para resgatar o input
 btn_addTarefa.addEventListener("click", adicionarTarefa) //Evento que dispara a função adicionarTarefa ao ouvir o Click
 btn_delTarefa.addEventListener("click", removerTarefa)
+
         
         
 function adicionarTarefa(){
@@ -13,11 +14,10 @@ function adicionarTarefa(){
     if(valorInputTarefa != ''){
         let itemLi = escopoUl.appendChild(document.createElement("li")) // Atribui a váriavel "novaTarefa" o novo elemento "li" criado na "ul" listaTarefas
         itemLi.innerText = valorInputTarefa;
+        itemLi.setAttribute('id', '1')
     }else{
         alert("Coloque uma tarefa válida")
-    }
-    
-    
+    }    
 }
 
 
