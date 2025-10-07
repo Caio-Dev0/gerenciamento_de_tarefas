@@ -12,10 +12,14 @@ function adicionarTarefa(){
     let escopoUl = document.querySelector("ul") // Criei uma váriavel que irá armazenar a tag ul
     let valorInputTarefa = inputTarefa.value // atribui a esta váriavel o valor do input
     contador += 1;
+    
     if(valorInputTarefa != ''){
-        let itemLi = escopoUl.appendChild(document.createElement("li")) // Atribui a váriavel "novaTarefa" o novo elemento "li" criado na "ul" listaTarefas
+        let itemLi = escopoUl.appendChild(document.createElement("li"))
+        let last_task = escopoUl.lastElementChild
         itemLi.innerText = valorInputTarefa;
         itemLi.setAttribute('id', contador)
+        let btn_remove = last_task.appendChild(document.createElement("button"))
+        btn_remove.innerText('X')
     }else{
         alert("Coloque uma tarefa válida")
     }    
