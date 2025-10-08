@@ -18,18 +18,21 @@ function adicionarTarefa(){
         itemLi.innerText = valorInputTarefa;
         itemLi.setAttribute('id', contador)
         let btn_remove = last_task.appendChild(document.createElement("button"))
-        console.log(btn_remove)
+        btn_remove.textContent = "X"
         btn_remove.setAttribute('class', `btn_remover${contador}`)
-        btn_remove.addEventListener("click", removerTarefa)
+        btn_remove.addEventListener("click", removerTarefa) //Não entendi
+
     }else{
         alert("Coloque uma tarefa válida")
     }    
-    
 }
 
 
-function removerTarefa(){
-    console.log("bo")
+function removerTarefa(evento){
+    let botaoClicado = evento.target; // Não entendi
+    let elementoPai = botaoClicado.parentNode;
+    let escopoUl = document.querySelector("ul")
+    escopoUl.removeChild(elementoPai)
 }
 
         
