@@ -10,6 +10,7 @@ btn_AddTask.addEventListener("click", addTask)
 function addTask(){
     let container_TaskList = document.querySelector("ul") // Criei uma váriavel que irá armazenar a tag ul
     let valor_Input_Task = inputTask.value // atribui a esta váriavel o valor do input
+    valor_Input_Task = valor_Input_Task.trim()
     contador_Ids_Tasks += 1;
 
     if(valor_Input_Task != ''){
