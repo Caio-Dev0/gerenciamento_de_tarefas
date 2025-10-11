@@ -2,6 +2,8 @@ let contador_Ids_Tasks = 0;
 let btn_Add_Task = document.querySelector(".btn-add") 
 let input_Task = document.querySelector("input") 
 let container_Task_List = document.querySelector("ul") 
+const meu_array = [ ]
+
 
 btn_Add_Task.addEventListener("click", addTask) 
 
@@ -31,14 +33,15 @@ function criar_Botão_Remover(container){
         
 function addTask(){
     const conteudo_Task = recebe_Valor_Input()
-    contador_Ids_Tasks += 1;
-
     if(conteudo_Task != ''){
         const task_Li = cria_Li()
-        let last_task = container_Task_List.lastElementChild
-        task_Li.innerText = conteudo_Task;
+        contador_Ids_Tasks += 1;
+        ;
+        let meuObj = {nome: task_Li.innerText = conteudo_Task, id: contador_Ids_Tasks}
+        meu_array.push(meuObj)
+        console.log(meu_array)
         limpar_Valor_Input()
-        criar_Botão_Remover(last_task)        
+        criar_Botão_Remover(task_Li)        
     }else{
         alert("Coloque uma tarefa válida")
     }     
@@ -49,4 +52,5 @@ function deleteTask(evento){
     let btn_Remove_Task = evento.target; 
     let container_Task_Li = btn_Remove_Task.parentNode;
     container_Task_List.removeChild(container_Task_Li)
+    contador_Ids_Tasks -= 1;
 }
