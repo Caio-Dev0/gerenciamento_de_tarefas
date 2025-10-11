@@ -1,45 +1,52 @@
 let contador_Ids_Tasks = 0;
-let btn_AddTask = document.querySelector(".btn-add") 
-let inputTask = document.querySelector("input") 
-let container_TaskList = document.querySelector("ul") 
+let btn_Add_Task = document.querySelector(".btn-add") 
+let input_Task = document.querySelector("input") 
+let container_Task_List = document.querySelector("ul") 
 
-btn_AddTask.addEventListener("click", addTask) 
+btn_Add_Task.addEventListener("click", addTask) 
 
-function recebeInput(){
-    let valor_Input_Task = inputTask.value 
+function recebe_Valor_Input(){
+    let valor_Input_Task = input_Task.value 
     valor_Input_Task = valor_Input_Task.trim()
     return valor_Input_Task
 }
 
+function cria_Li(){
+    let task_Li = container_Task_List.appendChild(document.createElement("li"))
+    task_Li.setAttribute('id', contador_Ids_Tasks)
+    return task_Li
+}
+
+function limpar_Valor_Input(){
+    input_Task.value = ''
+}
+
+function criar_Botão_Remover(container){
+    let btn_Remove_Task = container.appendChild(document.createElement("button"))
+    btn_Remove_Task.textContent = "X"
+    btn_Remove_Task.setAttribute('class', `btn_remover${contador_Ids_Tasks}`)
+    btn_Remove_Task.addEventListener("click", deleteTask)
+    return btn_Remove_Task
+}
         
 function addTask(){
-    const valorInput = recebeInput()
-    console.log(valorInput)
+    const conteudo_Task = recebe_Valor_Input()
     contador_Ids_Tasks += 1;
 
-    if(valorInput != ''){
-        let task_Li = container_TaskList.appendChild(document.createElement("li"))
-        let last_task = container_TaskList.lastElementChild
-        task_Li.innerText = valorInput;
-        inputTask.value = ''
-        task_Li.setAttribute('id', contador_Ids_Tasks)
-        let btn_Remove_Task = last_task.appendChild(document.createElement("button"))
-        btn_Remove_Task.textContent = "X"
-        btn_Remove_Task.setAttribute('class', `btn_remover${contador_Ids_Tasks}`)
-        btn_Remove_Task.addEventListener("click", deleteTask)
-        
+    if(conteudo_Task != ''){
+        const task_Li = cria_Li()
+        let last_task = container_Task_List.lastElementChild
+        task_Li.innerText = conteudo_Task;
+        limpar_Valor_Input()
+        criar_Botão_Remover(last_task)        
     }else{
         alert("Coloque uma tarefa válida")
-    }    
-    
+    }     
 }
 
 
 function deleteTask(evento){
     let btn_Remove_Task = evento.target; 
     let container_Task_Li = btn_Remove_Task.parentNode;
-    container_TaskList.removeChild(container_Task_Li)
+    container_Task_List.removeChild(container_Task_Li)
 }
-
-        
-    
