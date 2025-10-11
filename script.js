@@ -1,39 +1,52 @@
-let contador = 0;
-let btn_addTarefa = document.querySelector(".btn-add") 
-let inputTarefa = document.querySelector("input") 
+let contador_Ids_Tasks = 0;
+let btn_Add_Task = document.querySelector(".btn-add") 
+let input_Task = document.querySelector("input") 
+let container_Task_List = document.querySelector("ul") 
 
-btn_addTarefa.addEventListener("click", adicionarTarefa) 
+btn_Add_Task.addEventListener("click", addTask) 
 
+function recebe_Valor_Input(){
+    let valor_Input_Task = input_Task.value 
+    valor_Input_Task = valor_Input_Task.trim()
+    return valor_Input_Task
+}
 
+function cria_Li(){
+    let task_Li = container_Task_List.appendChild(document.createElement("li"))
+    task_Li.setAttribute('id', contador_Ids_Tasks)
+    return task_Li
+}
 
+function limpar_Valor_Input(){
+    input_Task.value = ''
+}
+
+function criar_Botão_Remover(container){
+    let btn_Remove_Task = container.appendChild(document.createElement("button"))
+    btn_Remove_Task.textContent = "X"
+    btn_Remove_Task.setAttribute('class', `btn_remover${contador_Ids_Tasks}`)
+    btn_Remove_Task.addEventListener("click", deleteTask)
+    return btn_Remove_Task
+}
         
-function adicionarTarefa(){
-    let escopoUl = document.querySelector("ul") // Criei uma váriavel que irá armazenar a tag ul
-    let valorInputTarefa = inputTarefa.value // atribui a esta váriavel o valor do input
-    contador += 1;
-    
-    if(valorInputTarefa != ''){
-        let itemLi = escopoUl.appendChild(document.createElement("li"))
-        let last_task = escopoUl.lastElementChild
-        itemLi.innerText = valorInputTarefa;
-        itemLi.setAttribute('id', contador)
-        let btn_remove = last_task.appendChild(document.createElement("button"))
-        btn_remove.textContent = "X"
-        btn_remove.setAttribute('class', `btn_remover${contador}`)
-        btn_remove.addEventListener("click", removerTarefa) //Não entendi
+function addTask(){
+    const conteudo_Task = recebe_Valor_Input()
+    contador_Ids_Tasks += 1;
 
+    if(conteudo_Task != ''){
+        const task_Li = cria_Li()
+        let last_task = container_Task_List.lastElementChild
+        task_Li.innerText = conteudo_Task;
+        limpar_Valor_Input()
+        criar_Botão_Remover(last_task)        
     }else{
         alert("Coloque uma tarefa válida")
-    }    
+    }     
 }
 
 
-function removerTarefa(evento){
-    let botaoClicado = evento.target; // Não entendi
-    let elementoPai = botaoClicado.parentNode;
-    let escopoUl = document.querySelector("ul")
-    escopoUl.removeChild(elementoPai)
+function deleteTask(evento){
+    let btn_Remove_Task = evento.target; 
+    let container_Task_Li = btn_Remove_Task.parentNode;
+    container_Task_List.removeChild(container_Task_Li)
 }
-
-        
-    
