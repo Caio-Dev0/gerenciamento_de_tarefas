@@ -16,10 +16,13 @@ function limpaValorInput(){
 }
 
 function criaItemTarefa(){
-    let itemTarefa = containerListaTarefas.appendChild(document.createElement("li"))
+    let itemTarefa = document.createElement("li")
     itemTarefa.setAttribute('id', contadorIdsTarefas)
+    const botaoRemoverTarefa = criaBotaoRemover()
+    itemTarefa.appendChild(botaoRemoverTarefa)
     return itemTarefa
 }
+
 
 function criaBotaoRemover(){
     const botaoRemoverTarefa = document.createElement("button")
