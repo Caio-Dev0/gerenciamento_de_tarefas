@@ -21,10 +21,10 @@ function criaItemTarefa(){
     return itemTarefa
 }
 
-function criaBotaoRemover(container){
-    let botaoRemoverTarefa = container.appendChild(document.createElement("button"))
+function criaBotaoRemover(){
+    const botaoRemoverTarefa = document.createElement("button")
     botaoRemoverTarefa.textContent = "X"
-    botaoRemoverTarefa.setAttribute('class', `btn_remover${contadorIdsTarefas}`)
+    botaoRemoverTarefa.classList.add("btn-remover")
     botaoRemoverTarefa.addEventListener("click", deletarTarefa)
     return botaoRemoverTarefa
 }
