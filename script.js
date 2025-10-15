@@ -1,56 +1,53 @@
-let contador_Ids_Tasks = 0;
-let btn_Add_Task = document.querySelector(".btn-add") 
-let input_Task = document.querySelector("input") 
-let container_Task_List = document.querySelector("ul") 
-const meu_array = [ ]
+let contadorIdsTarefas = 0;
+const botaoAdicionarTarefa = document.querySelector(".btn-add") 
+const inputTarefa = document.querySelector("input") 
+const containerListaTarefas = document.querySelector("ul") 
+const meu_array = []
 
 
-btn_Add_Task.addEventListener("click", addTask) 
+botaoAdicionarTarefa.addEventListener("click", adicionarTarefa) 
 
-function recebe_Valor_Input(){
-    let valor_Input_Task = input_Task.value 
-    valor_Input_Task = valor_Input_Task.trim()
-    return valor_Input_Task
+function recebeValorInput(){
+    return inputTarefa.value.trim()
 }
 
-function cria_Li(){
-    let task_Li = container_Task_List.appendChild(document.createElement("li"))
-    task_Li.setAttribute('id', contador_Ids_Tasks)
-    return task_Li
+function limpaValorInput(){
+    inputTarefa.value = ''
 }
 
-function limpar_Valor_Input(){
-    input_Task.value = ''
+function criaItemTarefa(){
+    let itemTarefa = containerListaTarefas.appendChild(document.createElement("li"))
+    itemTarefa.setAttribute('id', contadorIdsTarefas)
+    return itemTarefa
 }
 
-function criar_Botão_Remover(container){
-    let btn_Remove_Task = container.appendChild(document.createElement("button"))
-    btn_Remove_Task.textContent = "X"
-    btn_Remove_Task.setAttribute('class', `btn_remover${contador_Ids_Tasks}`)
-    btn_Remove_Task.addEventListener("click", deleteTask)
-    return btn_Remove_Task
+function criaBotaoRemover(container){
+    let botaoRemoverTarefa = container.appendChild(document.createElement("button"))
+    botaoRemoverTarefa.textContent = "X"
+    botaoRemoverTarefa.setAttribute('class', `btn_remover${contadorIdsTarefas}`)
+    botaoRemoverTarefa.addEventListener("click", deletarTarefa)
+    return botaoRemoverTarefa
 }
         
-function addTask(){
-    const conteudo_Task = recebe_Valor_Input()
-    if(conteudo_Task != ''){
-        const task_Li = cria_Li()
-        contador_Ids_Tasks += 1;
-        ;
-        let meuObj = {nome: task_Li.innerText = conteudo_Task, id: contador_Ids_Tasks}
+function adicionarTarefa(){
+    const conteudoTarefa = recebeValorInput()
+    if(conteudoTarefa != ''){
+        const itemTarefa = criaItemTarefa()
+        contadorIdsTarefas += 1;
+        let meuObj = {nome: itemTarefa.textContent = conteudoTarefa, id: contadorIdsTarefas}
         meu_array.push(meuObj)
         console.log(meu_array)
-        limpar_Valor_Input()
-        criar_Botão_Remover(task_Li)        
+        limpaValorInput()
+        criaBotaoRemover(itemTarefa)        
     }else{
         alert("Coloque uma tarefa válida")
     }     
 }
 
 
-function deleteTask(evento){
-    let btn_Remove_Task = evento.target; 
-    let container_Task_Li = btn_Remove_Task.parentNode;
-    container_Task_List.removeChild(container_Task_Li)
-    contador_Ids_Tasks -= 1;
+function deletarTarefa(evento){
+    let botaoRemoverTarefa = evento.target; 
+    let containerItemTarefa = botaoRemoverTarefa.parentNode;
+    containerListaTarefas.removeChild(containerItemTarefa)
+    contadorIdsTarefas -= 1;
 }
