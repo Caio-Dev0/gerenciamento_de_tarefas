@@ -15,15 +15,6 @@ function limpaValorInput(){
     inputTarefa.value = ''
 }
 
-function criaItemTarefa(){
-    let itemTarefa = document.createElement("li")
-    itemTarefa.setAttribute('id', contadorIdsTarefas)
-    const botaoRemoverTarefa = criaBotaoRemover()
-    itemTarefa.appendChild(botaoRemoverTarefa)
-    return itemTarefa
-}
-
-
 function criaBotaoRemover(){
     const botaoRemoverTarefa = document.createElement("button")
     botaoRemoverTarefa.textContent = "X"
@@ -31,25 +22,34 @@ function criaBotaoRemover(){
     botaoRemoverTarefa.addEventListener("click", deletarTarefa)
     return botaoRemoverTarefa
 }
-        
+
+function criaItemTarefa(conteudo){
+    let itemTarefa = document.createElement("li")
+    itemTarefa.setAttribute('id', contadorIdsTarefas)
+    itemTarefa.textContent = conteudo
+    const botaoRemoverTarefa = criaBotaoRemover()
+    itemTarefa.appendChild(botaoRemoverTarefa)
+    return itemTarefa
+}
+
 function adicionarTarefa(){
     const conteudoTarefa = recebeValorInput()
-    if(conteudoTarefa != ''){
-        const itemTarefa = criaItemTarefa()
-        contadorIdsTarefas += 1;
-        let meuObj = {nome: itemTarefa.textContent = conteudoTarefa, id: contadorIdsTarefas}
-        meu_array.push(meuObj)
-        console.log(meu_array)
-        limpaValorInput()
-        criaBotaoRemover(itemTarefa)        
-    }else{
+    if(conteudoTarefa === ''){
         alert("Coloque uma tarefa válida")
-    }     
+        return
+    } 
+    const itemTarefa = criaItemTarefa(conteudoTarefa)
+    containerListaTarefas.appendChild(itemTarefa)
+    contadorIdsTarefas += 1;
+    // let meuObj = {nome: itemTarefa.textContent = conteudoTarefa, id: contadorIdsTarefas}
+    // meu_array.push(meuObj)
+    // console.log(meu_array)
+    limpaValorInput()
 }
 
 
 function deletarTarefa(evento){
-    let botaoRemoverTarefa = evento.target; 
+    const botaoRemoverTarefa = evento.target; 
     let containerItemTarefa = botaoRemoverTarefa.parentNode;
     containerListaTarefas.removeChild(containerItemTarefa)
     contadorIdsTarefas -= 1;
