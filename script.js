@@ -2,17 +2,17 @@ let contadorIdsTarefas = 0;
 const botaoAdicionarTarefa = document.querySelector(".btn-add") 
 const inputTarefa = document.querySelector("input") 
 const containerListaTarefas = document.querySelector("ul") 
-const meu_array = []
+let meu_array = []
 
 
 botaoAdicionarTarefa.addEventListener("click", adicionarTarefa) 
 
 function recebeValorInput(){
-    return inputTarefa.value.trim()
+    return inputTarefa.value.trim() //Transnformar em Arrow function
 }
 
 function limpaValorInput(){
-    inputTarefa.value = ''
+    inputTarefa.value = '' //Transnformar em Arrow function
 }
 
 function criaBotaoRemover(){
@@ -38,19 +38,22 @@ function adicionarTarefa(){
         alert("Coloque uma tarefa válida")
         return
     } 
+    contadorIdsTarefas += 1;
     const itemTarefa = criaItemTarefa(conteudoTarefa)
     containerListaTarefas.appendChild(itemTarefa)
-    contadorIdsTarefas += 1;
-    // let meuObj = {nome: itemTarefa.textContent = conteudoTarefa, id: contadorIdsTarefas}
-    // meu_array.push(meuObj)
-    // console.log(meu_array)
+    let meuObj = {nome: itemTarefa.textContent, id: String(contadorIdsTarefas)}
+    meu_array.push(meuObj)
+    console.log(meu_array)
     limpaValorInput()
 }
 
 
+
 function deletarTarefa(evento){
-    const botaoRemoverTarefa = evento.target; 
-    let containerItemTarefa = botaoRemoverTarefa.parentNode;
-    containerListaTarefas.removeChild(containerItemTarefa)
-    contadorIdsTarefas -= 1;
+    const botao = evento.target;
+    const item = botao.parentNode;
+    containerListaTarefas.removeChild(item)
+    meu_array = meu_array.filter(produto => produto.id !== item.id) // Entender fluxo 
+    console.log(meu_array)
 }
+
