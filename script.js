@@ -41,9 +41,8 @@ function adicionarTarefa(){
     contadorIdsTarefas += 1;
     const itemTarefa = criaItemTarefa(conteudoTarefa)
     containerListaTarefas.appendChild(itemTarefa)
-    let meuObj = {nome: itemTarefa.textContent, id: String(contadorIdsTarefas)}
-    arrayDeTarefas.push(meuObj)
-    console.log(arrayDeTarefas)
+    let objetoTarefa = {nome: itemTarefa.textContent, id: String(contadorIdsTarefas)}
+    arrayDeTarefas.push(objetoTarefa)
     limpaValorInput()
 }
 
@@ -54,6 +53,5 @@ function deletarTarefa(chamadaDaFuncao){
     const item = botao.parentNode;
     containerListaTarefas.removeChild(item)
     arrayDeTarefas = arrayDeTarefas.filter(itemDoArray => itemDoArray.id !== item.id) // Entender fluxo 
-    console.log(arrayDeTarefas)
 }
 
