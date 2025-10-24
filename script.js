@@ -2,17 +2,17 @@ let contadorIdsTarefas = 0;
 const botaoAdicionarTarefa = document.querySelector(".btn-add") 
 const inputTarefa = document.querySelector("input") 
 const containerListaTarefas = document.querySelector("ul") 
-let meu_array = []
+let arrayDeTarefas = []
 
 
 botaoAdicionarTarefa.addEventListener("click", adicionarTarefa) 
 
 function recebeValorInput(){
-    return inputTarefa.value.trim() //Transnformar em Arrow function
+    return inputTarefa.value.trim() 
 }
 
 function limpaValorInput(){
-    inputTarefa.value = '' //Transnformar em Arrow function
+    inputTarefa.value = ''
 }
 
 function criaBotaoRemover(){
@@ -42,18 +42,18 @@ function adicionarTarefa(){
     const itemTarefa = criaItemTarefa(conteudoTarefa)
     containerListaTarefas.appendChild(itemTarefa)
     let meuObj = {nome: itemTarefa.textContent, id: String(contadorIdsTarefas)}
-    meu_array.push(meuObj)
-    console.log(meu_array)
+    arrayDeTarefas.push(meuObj)
+    console.log(arrayDeTarefas)
     limpaValorInput()
 }
 
 
 
-function deletarTarefa(evento){
-    const botao = evento.target;
+function deletarTarefa(chamadaDaFuncao){
+    const botao = chamadaDaFuncao.target;
     const item = botao.parentNode;
     containerListaTarefas.removeChild(item)
-    meu_array = meu_array.filter(produto => produto.id !== item.id) // Entender fluxo 
-    console.log(meu_array)
+    arrayDeTarefas = arrayDeTarefas.filter(itemDoArray => itemDoArray.id !== item.id) // Entender fluxo 
+    console.log(arrayDeTarefas)
 }
 
