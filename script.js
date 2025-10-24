@@ -7,6 +7,10 @@ let arrayDeTarefas = []
 
 botaoAdicionarTarefa.addEventListener("click", adicionarTarefa) 
 
+function salvarDadosLocalstorage(){
+    localStorage.setItem("Dados Tarefas", arrayDeTarefas)
+}
+
 function recebeValorInput(){
     return inputTarefa.value.trim() 
 }
@@ -44,6 +48,7 @@ function adicionarTarefa(){
     let objetoTarefa = {nome: itemTarefa.textContent, id: String(contadorIdsTarefas)}
     arrayDeTarefas.push(objetoTarefa)
     limpaValorInput()
+    salvarDadosLocalstorage()
 }
 
 
@@ -52,6 +57,7 @@ function deletarTarefa(chamadaDaFuncao){
     const botao = chamadaDaFuncao.target;
     const item = botao.parentNode;
     containerListaTarefas.removeChild(item)
-    arrayDeTarefas = arrayDeTarefas.filter(itemDoArray => itemDoArray.id !== item.id) // Entender fluxo 
+    arrayDeTarefas = arrayDeTarefas.filter(itemDoArray => itemDoArray.id !== item.id)
+    salvarDadosLocalstorage()
 }
 
