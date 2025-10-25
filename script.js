@@ -8,7 +8,7 @@ let arrayDeTarefas = []
 botaoAdicionarTarefa.addEventListener("click", adicionarTarefa) 
 
 function salvarDadosLocalstorage(){
-    localStorage.setItem("Dados Tarefas", arrayDeTarefas)
+    localStorage.setItem("Dados Tarefas", JSON.stringify(arrayDeTarefas))
 }
 
 function recebeValorInput(){
@@ -45,7 +45,7 @@ function adicionarTarefa(){
     contadorIdsTarefas += 1;
     const itemTarefa = criaItemTarefa(conteudoTarefa)
     containerListaTarefas.appendChild(itemTarefa)
-    let objetoTarefa = {nome: itemTarefa.textContent, id: String(contadorIdsTarefas)}
+    let objetoTarefa = {conteudo: itemTarefa.textContent, id: String(contadorIdsTarefas)}
     arrayDeTarefas.push(objetoTarefa)
     limpaValorInput()
     salvarDadosLocalstorage()
@@ -61,3 +61,13 @@ function deletarTarefa(chamadaDaFuncao){
     salvarDadosLocalstorage()
 }
 
+function resgatarTarefasLocalstorage(){
+    const dadosArrayTarefas = JSON.parse(localStorage.getItem("Dados Tarefas"))
+    for (const i of dadosArrayTarefas){
+        const teste = criaItemTarefa(i.conteudo)
+        containerListaTarefas.appendChild(teste)
+    }
+}
+
+
+// Voce estava resgatando os dados do localStorage para recriar eles no HTML, mas quando você chama a função acima, os dados do localStorage são resetados
