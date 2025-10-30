@@ -11,6 +11,10 @@ function salvarDadosLocalstorage(){
     localStorage.setItem("Dados Tarefas", JSON.stringify(arrayDeTarefas))
 }
 
+function salvarIdLocalstorage(){
+    localStorage.setItem("Contador do ID", JSON.stringify(contadorIdsTarefas))
+}
+
 function recebeValorInput(){
     return inputTarefa.value.trim() 
 }
@@ -49,6 +53,8 @@ function adicionarTarefa(){
     arrayDeTarefas.push(objetoTarefa)
     limpaValorInput()
     salvarDadosLocalstorage()
+    salvarIdLocalstorage()
+
 }
 
 
@@ -69,5 +75,3 @@ function resgatarTarefasLocalstorage(){
     }
 }
 
-
-// Voce estava resgatando os dados do localStorage para recriar eles no HTML, mas quando você chama a função acima, os dados do localStorage são resetados
