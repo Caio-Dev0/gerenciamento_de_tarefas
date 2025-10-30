@@ -75,3 +75,9 @@ function resgatarTarefasLocalstorage(){
     }
 }
 
+function resgatarContadorIdLocalstorage(){
+    const teste1 = JSON.parse(localStorage.getItem("Contador do ID"))
+    contadorIdsTarefas = teste1
+    console.log(contadorIdsTarefas)
+}
+
