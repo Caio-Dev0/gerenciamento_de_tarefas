@@ -84,3 +84,5 @@ function resgatarContadorIdLocalstorage(){
     console.log(contadorIdsTarefas)
 }
 
+resgatarTarefasLocalstorage()
+resgatarContadorIdLocalstorage()
