@@ -71,6 +71,9 @@ function resgatarTarefasLocalstorage(){
     const dadosArrayTarefas = JSON.parse(localStorage.getItem("Dados Tarefas"))
     for (const i of dadosArrayTarefas){
         const teste = criaItemTarefa(i.conteudo)
+        teste.setAttribute("id", i.id)
+        const objetoTarefa = {conteudo: i.conteudo, id: i.id}
+        arrayDeTarefas.push(objetoTarefa)
         containerListaTarefas.appendChild(teste)
     }
 }
