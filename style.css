@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+:root{
+    --fonte-grande: 3.2rem;
+    --fonte-media: 2.4rem;
+    --fonte-pequena: 1.6rem;
+    --branco-acinzentado-cor: #F7F7F7;
+    --amarelo-alaranjado-cor: #FFB22C;
+    --marrom-cor: #854836;
+    --preto-cor: #000000;
+    --tipografia-titulo: "Caveat", cursive;
+}
+
+
 html, body{
     padding: 0;
     margin: 0;
@@ -7,8 +21,6 @@ html, body{
 html{
     font-size: 62.5%
 }
-
-
 
 .title-header{
     background-color: #6d28d9;
@@ -68,7 +80,8 @@ html{
     display: flex;
     justify-content: space-between;
     font-size: 2.4rem;
-    background-color: orange;
+    background-color: #854836;
+    color: #F7F7F7;
     padding: 1rem;
 }
 
