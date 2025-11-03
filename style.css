@@ -31,6 +31,7 @@ html{
     height: 100%;
     flex-direction: column;
     align-items: center;
+    gap: 1.6rem;
 }
 
 .task-header{
@@ -54,6 +55,22 @@ html{
     font-size: 1.6rem;
 }
 
+.task-list{
+    width: 54rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+}
+
+.task-list > li{
+    width: 54rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.4rem;
+    background-color: orange;
+    padding: 1rem;
+}
 
 
 
