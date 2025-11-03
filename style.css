@@ -10,19 +10,22 @@ html{
 
 
 
-.area{
+.title-header{
     background-color: #6d28d9;
-    width:50rem;
-    min-height: 35rem;
-    border-radius: 1rem;
-    text-align: center;
-    padding: 1rem;        
-    display: grid;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .title-header > h1{
-    font-size: 3rem
+    font-size: 3.2rem;
+    color: white;
+    letter-spacing: 0.5rem;
 }
+
+
 
 .area > ul{
     display: flex;
