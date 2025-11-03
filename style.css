@@ -8,7 +8,7 @@
     --amarelo-alaranjado-cor: #FFB22C;
     --marrom-cor: #854836;
     --preto-cor: #000000;
-    --tipografia-titulo: "Caveat", cursive;
+    --tipografia: "Caveat", cursive;
 }
 
 
@@ -22,67 +22,93 @@ html{
     font-size: 62.5%
 }
 
+.task-container{
+    display: flex;
+    padding: 1rem 0;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--branco-acinzentado-cor);
+}
+
 .title-header{
-    background-color: #6d28d9;
-    width: 100%;
-    height: 10vh;
+    padding: 0 2rem;
+    background-color: var(--marrom-cor);
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 2rem 2rem 0 0;
+
 }
 
 .title-header > h1{
     font-size: 3.2rem;
-    color: white;
+    color: var(--branco-acinzentado-cor);
+    font-family: var(--tipografia);
     letter-spacing: 0.5rem;
 }
 
-.task-container{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.6rem;
-}
 
 .task-header{
     display: flex;
     flex-direction: column; 
-    margin-top: 2.4rem;
-    gap: 1.6rem
+    padding: 2.4rem;
+    gap: 1.6rem;
+    background-color: var(--marrom-cor);
+    border-radius: 2rem;
 }
 
 .task-header > .task-input{
     width: 96rem;
     height: 3.2rem;
     padding: 0 0.8rem;
-    font-size: 1.6rem;
+    font-size: var(--fonte-media);
+    font-family: var(--tipografia);
+    color: var(--preto-cor);
+    border-radius: 1rem;
+    border: 1px solid black;
 }
 
 .task-header > .btn-add{
     width: 24rem;
-    height: 3.2rem;
+    padding: 0.4rem 0;
     align-self: center;
-    font-size: 1.6rem;
+    font-size: var(--fonte-media);
+    font-family: var(--tipografia);
+    border-radius: 2rem;
+    border: 1px solid black;
 }
 
 .task-list{
-    width: 54rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: dense;
+    padding: 2rem 2rem;
+    margin: 0;
+    width: calc(96rem + 2.4rem);
     gap: 2.4rem;
+    background-color: var(--marrom-cor);
+    border-radius: 1rem;
+    margin-top: 1.6rem;
 }
 
 .task-list > li{
-    width: 54rem;
     display: flex;
     justify-content: space-between;
-    font-size: 2.4rem;
-    background-color: #854836;
-    color: #F7F7F7;
+    align-items: center;
+    font-size: var(--fonte-grande);
+    background-color: var(--branco-acinzentado-cor);
+    color: var(--preto-cor);
     padding: 1rem;
+    font-family: var(--tipografia);
+    border-radius: 1rem;
+}
+
+.btn-remover{
+    padding: 0.5rem 1rem;
+    font-family: var(--tipografia);
+    font-size: var(--fonte-media);
+    text-align: center;
 }
 
 
