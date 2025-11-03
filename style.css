@@ -1,15 +1,14 @@
-html{
-    font-size: 62.5%;
+html, body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-body{
-    height: 90vh; 
-    background-color: #404040;
-    color: white;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+html{
+    font-size: 62.5%
 }
+
+
 
 .area{
     background-color: #6d28d9;
@@ -19,10 +18,9 @@ body{
     text-align: center;
     padding: 1rem;        
     display: grid;
-    
 }
 
-.area > h1{
+.title-header > h1{
     font-size: 3rem
 }
 
@@ -35,7 +33,7 @@ body{
 }
 
 .area > ul > li{
-    width: 100%;
+    width: inherit;
     height: 4rem;
     font-size: 2rem;
     background-color: #c4b5fd;
@@ -44,7 +42,8 @@ body{
     color: black;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 0 2rem;
 }
 
 .task-bar{
