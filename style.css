@@ -49,7 +49,9 @@ html{
 
 .task-header > .btn-add{
     width: 24rem;
+    height: 3.2rem;
     align-self: center;
+    font-size: 1.6rem;
 }
 
 
