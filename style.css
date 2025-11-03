@@ -36,6 +36,20 @@ html{
 .task-header{
     display: flex;
     flex-direction: column; 
+    margin-top: 2.4rem;
+    gap: 1.6rem
+}
+
+.task-header > .task-input{
+    width: 96rem;
+    height: 3.2rem;
+    padding: 0 0.8rem;
+    font-size: 1.6rem;
+}
+
+.task-header > .btn-add{
+    width: 24rem;
+    align-self: center;
 }
 
 
