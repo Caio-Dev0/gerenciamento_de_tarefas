@@ -4,10 +4,12 @@
     --fonte-grande: 3.2rem;
     --fonte-media: 2.4rem;
     --fonte-pequena: 1.6rem;
-    --branco-acinzentado-cor: #F7F7F7;
-    --amarelo-alaranjado-cor: #FFB22C;
-    --marrom-cor: #854836;
-    --preto-cor: #000000;
+    --cor-brancoAcinzentado: #F7F7F7;
+    --cor-AzulEscuuro: #244058;
+    --cor-bg: #5682B1;
+    --cor-removeBtn: #8B0000;
+    --cor-pessego: #FFE8DB;
+    --cor-preto: #000000;
     --tipografia: "Caveat", cursive;
 }
 
@@ -22,29 +24,32 @@ html{
     font-size: 62.5%
 }
 
+body{
+    background-color: var(--cor-preto);
+}
+
 .task-container{
     display: flex;
     padding: 1rem 0;
     flex-direction: column;
     align-items: center;
-    background-color: var(--branco-acinzentado-cor);
 }
 
 .title-header{
     padding: 0 2rem;
-    background-color: var(--marrom-cor);
+    background-color: var(--cor-bg);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 2rem 2rem 0 0;
-
 }
 
 .title-header > h1{
     font-size: 3.2rem;
-    color: var(--branco-acinzentado-cor);
+    color: var(--cor-brancoAcinzentado);
     font-family: var(--tipografia);
     letter-spacing: 0.5rem;
+    font-weight: bold;
 }
 
 
@@ -53,7 +58,7 @@ html{
     flex-direction: column; 
     padding: 2.4rem;
     gap: 1.6rem;
-    background-color: var(--marrom-cor);
+    background-color: var(--cor-bg);
     border-radius: 2rem;
 }
 
@@ -63,7 +68,7 @@ html{
     padding: 0 0.8rem;
     font-size: var(--fonte-media);
     font-family: var(--tipografia);
-    color: var(--preto-cor);
+    color: var(--cor-preto);
     border-radius: 1rem;
     border: 1px solid black;
 }
@@ -75,7 +80,18 @@ html{
     font-size: var(--fonte-media);
     font-family: var(--tipografia);
     border-radius: 2rem;
-    border: 1px solid black;
+    border: 1px solid var(--cor-brancoAcinzentado);
+    font-weight: 500;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.btn-add:hover{
+    background-color: var(--cor-pessego);
+    color: var(--cor-AzulEscuuro);
+    border-color: var(--cor-pessego);
+    transition: 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .task-list{
@@ -87,7 +103,7 @@ html{
     margin: 0;
     width: calc(96rem + 2.4rem);
     gap: 2.4rem;
-    background-color: var(--marrom-cor);
+    background-color: var(--cor-bg);
     border-radius: 1rem;
     margin-top: 1.6rem;
 }
@@ -97,11 +113,21 @@ html{
     justify-content: space-between;
     align-items: center;
     font-size: var(--fonte-grande);
-    background-color: var(--branco-acinzentado-cor);
-    color: var(--preto-cor);
+    background-color: var(--cor-pessego);
+    color: var(--cor-AzulEscuuro);
     padding: 1rem;
     font-family: var(--tipografia);
     border-radius: 1rem;
+    transition: 0.5s;
+}
+
+.task-list > li:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 0.3s ease;
+}
+
+.tamanho-total{
+    grid-column: 1 / 3;
 }
 
 .btn-remover{
@@ -109,6 +135,18 @@ html{
     font-family: var(--tipografia);
     font-size: var(--fonte-media);
     text-align: center;
+    border-radius: 1rem;
+    border: 1px solid black;
+    background-color: var(--cor-brancoAcinzentado);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-remover:hover{
+    background-color: var(--cor-removeBtn);
+    color: var(--cor-brancoAcinzentado);
+    transition: 0.3s ease;
+    border-color: var(--cor-removeBtn);
 }
 
 
