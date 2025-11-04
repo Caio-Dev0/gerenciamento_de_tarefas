@@ -2,13 +2,13 @@ let contadorIdsTarefas = 0;
 const botaoAdicionarTarefa = document.querySelector(".btn-add") 
 const inputTarefa = document.querySelector("input") 
 const containerListaTarefas = document.querySelector("ul") 
-let arrayDeTarefas = []
+let arrayTarefas = []
 
 
 botaoAdicionarTarefa.addEventListener("click", adicionarTarefa) 
 
-function salvarDadosLocalstorage(){
-    localStorage.setItem("Dados Tarefas", JSON.stringify(arrayDeTarefas))
+function salvarTarefasLocalstorage(){
+    localStorage.setItem("Dados Tarefas", JSON.stringify(arrayTarefas))
 }
 
 function salvarIdLocalstorage(){
@@ -34,10 +34,21 @@ function criaBotaoRemover(){
 function criaItemTarefa(conteudo){
     let itemTarefa = document.createElement("li")
     itemTarefa.setAttribute('id', contadorIdsTarefas)
+    itemTarefa.setAttribute("class", "itemTarefa")
     itemTarefa.textContent = conteudo
     const botaoRemoverTarefa = criaBotaoRemover()
     itemTarefa.appendChild(botaoRemoverTarefa)
     return itemTarefa
+}
+
+function ajusteTamanhoTarefaCss(){
+    const ultimaTarefa = containerListaTarefas.lastChild
+    if(arrayTarefas.length % 2 !== 0){
+        ultimaTarefa.classList.add("tamanho-total")
+    }else if(arrayTarefas.length % 2 === 0){
+       const abacate = document.querySelector('.tamanho-total')
+       abacate.classList.remove("tamanho-total")
+    }
 }
 
 function adicionarTarefa(){
@@ -50,39 +61,47 @@ function adicionarTarefa(){
     const itemTarefa = criaItemTarefa(conteudoTarefa)
     containerListaTarefas.appendChild(itemTarefa)
     let objetoTarefa = {conteudo: itemTarefa.textContent, id: String(contadorIdsTarefas)}
-    arrayDeTarefas.push(objetoTarefa)
+    arrayTarefas.push(objetoTarefa)
     limpaValorInput()
-    salvarDadosLocalstorage()
+    salvarTarefasLocalstorage()
     salvarIdLocalstorage()
-
+    ajusteTamanhoTarefaCss()
 }
 
-
-
-function deletarTarefa(chamadaDaFuncao){
-    const botao = chamadaDaFuncao.target;
-    const item = botao.parentNode;
-    containerListaTarefas.removeChild(item)
-    arrayDeTarefas = arrayDeTarefas.filter(itemDoArray => itemDoArray.id !== item.id)
-    salvarDadosLocalstorage()
+function deletarTarefa(evento){
+    const botao = evento.target;
+    const itemTarefa = botao.parentNode;
+    containerListaTarefas.removeChild(itemTarefa)
+    arrayTarefas = arrayTarefas.filter(tarefa => tarefa.id !== itemTarefa.id)
+    salvarTarefasLocalstorage()
+    ajusteTamanhoTarefaCss()
 }
 
 function resgatarTarefasLocalstorage(){
     const dadosArrayTarefas = JSON.parse(localStorage.getItem("Dados Tarefas"))
-    for (const i of dadosArrayTarefas){
-        const teste = criaItemTarefa(i.conteudo)
-        teste.setAttribute("id", i.id)
-        const objetoTarefa = {conteudo: i.conteudo, id: i.id}
-        arrayDeTarefas.push(objetoTarefa)
-        containerListaTarefas.appendChild(teste)
+    for (const atributo of dadosArrayTarefas){
+        const itemTarefa = criaItemTarefa(atributo.conteudo)
+        itemTarefa.setAttribute("id", atributo.id)
+        const objetoTarefa = {conteudo: atributo.conteudo, id: atributo.id}
+        arrayTarefas.push(objetoTarefa)
+        containerListaTarefas.appendChild(itemTarefa)
     }
 }
 
 function resgatarContadorIdLocalstorage(){
-    const teste1 = JSON.parse(localStorage.getItem("Contador do ID"))
-    contadorIdsTarefas = teste1
+    const contadorIdLocalstorage = JSON.parse(localStorage.getItem("Contador do ID"))
+    contadorIdsTarefas = contadorIdLocalstorage
     console.log(contadorIdsTarefas)
 }
 
+
+
 resgatarTarefasLocalstorage()
 resgatarContadorIdLocalstorage()
+ajusteTamanhoTarefaCss()
+
+
+// Refazer nomenclaturas para inglês
+// Fazer documentação
+// Testar e resolver bugs ainda existentes (Peça ajuda a IA)
+
