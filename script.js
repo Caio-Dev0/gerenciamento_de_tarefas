@@ -41,15 +41,6 @@ function criaItemTarefa(conteudo){
     return itemTarefa
 }
 
-function ajusteTamanhoTarefaCss(){
-    const ultimaTarefa = containerListaTarefas.lastChild
-    if(arrayTarefas.length % 2 !== 0){
-        ultimaTarefa.classList.add("tamanho-total")
-    }else if(arrayTarefas.length % 2 === 0){
-       const abacate = document.querySelector('.tamanho-total')
-       abacate.classList.remove("tamanho-total")
-    }
-}
 
 function adicionarTarefa(){
     const conteudoTarefa = recebeValorInput()
@@ -65,7 +56,6 @@ function adicionarTarefa(){
     limpaValorInput()
     salvarTarefasLocalstorage()
     salvarIdLocalstorage()
-    ajusteTamanhoTarefaCss()
 }
 
 function deletarTarefa(evento){
@@ -74,7 +64,6 @@ function deletarTarefa(evento){
     containerListaTarefas.removeChild(itemTarefa)
     arrayTarefas = arrayTarefas.filter(tarefa => tarefa.id !== itemTarefa.id)
     salvarTarefasLocalstorage()
-    ajusteTamanhoTarefaCss()
 }
 
 function resgatarTarefasLocalstorage(){
@@ -98,10 +87,6 @@ function resgatarContadorIdLocalstorage(){
 
 resgatarTarefasLocalstorage()
 resgatarContadorIdLocalstorage()
-ajusteTamanhoTarefaCss()
 
 
-// Refazer nomenclaturas para inglês
-// Fazer documentação
-// Testar e resolver bugs ainda existentes (Peça ajuda a IA)
 
