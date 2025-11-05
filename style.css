@@ -97,11 +97,11 @@ body{
 .task-list{
     display: grid;
     justify-content: center;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-auto-flow: dense;
     padding: 2rem 2rem;
     margin: 0;
-    width: calc(96rem + 2.4rem);
+    width: calc(96rem + 2rem);
     gap: 2.4rem;
     background-color: var(--cor-bg);
     border-radius: 1rem;
@@ -174,7 +174,6 @@ body{
     }
     .task-list{
         width: 40rem;
-        grid-template-columns: 1fr;
     }
 }
 
