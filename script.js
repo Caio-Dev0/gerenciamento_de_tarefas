@@ -51,7 +51,7 @@ function adicionarTarefa(){
     contadorIdsTarefas += 1;
     const itemTarefa = criaItemTarefa(conteudoTarefa)
     containerListaTarefas.appendChild(itemTarefa)
-    let objetoTarefa = {conteudo: itemTarefa.textContent, id: String(contadorIdsTarefas)}
+    let objetoTarefa = {conteudo: conteudoTarefa, id: String(contadorIdsTarefas)}
     arrayTarefas.push(objetoTarefa)
     limpaValorInput()
     salvarTarefasLocalstorage()
