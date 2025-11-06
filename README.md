@@ -98,7 +98,7 @@ Abra o arquivo index.html em seu navegador.
 
 ## 👨‍💻 Autor
 
-Feito com 💙 por **Caio Lucas**🔗
+Feito com 💙 por **Caio Lucas**
 
 
 🔗 [GitHub](https://github.com/caio-dev0)
