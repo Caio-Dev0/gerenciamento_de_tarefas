@@ -37,14 +37,14 @@ O projeto tem como foco:
  ┣ 📜 index.html
  ┣ 📜 style.css
  ┗ 📜 script.js
-
+```
 ---
 
 ## ⚙️ Como executar o projeto
 
 ### Clone este repositório:
 
-* git clone https://github.com/SeuUsuario/todo-list.git
+* git clone: https://github.com/SeuUsuario/todo-list
 
 
 Abra o arquivo index.html em seu navegador.
@@ -73,7 +73,7 @@ Abra o arquivo index.html em seu navegador.
 
 * Uso de condições e loops de forma mais limpa
 
-8 Aplicação de armazenamento local
+* Aplicação de armazenamento local
 
 * Criação de layout responsivo com CSS Grid/Flexbox
 ---
@@ -92,17 +92,14 @@ Abra o arquivo index.html em seu navegador.
 
 * Alternar entre modo claro e escuro (Dark Mode)
 
----
-
-## 📄 Licença
-
-Este projeto está sob a licença **MIT**.
-Você pode usá-lo, modificá-lo e distribuí-lo livremente para fins de aprendizado e portfólio.
+* Utilizar código JS em POO
 
 ---
 
 ## 👨‍💻 Autor
 
-Feito com 💙 por **Caio Lucas**
+Feito com 💙 por **Caio Lucas**🔗
+
+
 🔗 [GitHub](https://github.com/caio-dev0)
 💼 [LinkedIn](https://www.linkedin.com/in/caio-dev0/)
