@@ -97,12 +97,9 @@ body{
 .task-list{
     display: grid;
     justify-content: center;
+    padding: 0;
     grid-template-columns: 1fr;
-    grid-auto-flow: dense;
-    /* padding: 2rem 2rem; */
-    margin: 0;
     width: calc(96rem + 2rem);
-    gap: 2.4rem;
     background-color: var(--cor-bg);
     border-radius: 1rem;
     margin-top: 1.6rem;
@@ -116,6 +113,7 @@ body{
     background-color: var(--cor-pessego);
     color: var(--cor-AzulEscuuro);
     padding: 1rem;
+    margin: 2rem 2rem;
     font-family: var(--tipografia);
     border-radius: 1rem;
     transition: 0.5s;
@@ -126,9 +124,6 @@ body{
     transition: 0.3s ease;
 }
 
-.tamanho-total{
-    grid-column: 1 / 3;
-}
 
 .btn-remover{
     padding: 0.5rem 1rem;
@@ -155,7 +150,7 @@ body{
         width: 75rem;
     }
     .task-list{
-        width: 75rem
+        width: 75rem;
     }
 }
 
