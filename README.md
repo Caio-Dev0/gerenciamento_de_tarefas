@@ -82,8 +82,6 @@ Abra o arquivo index.html em seu navegador.
 
 * Redesign completo da interface no Figma
 
-* Separar o código JS em módulos
-
 * Criar sistema de classificação (Urgente, importante, rotineira)
 
 * Implementar edição de tarefas
@@ -91,8 +89,6 @@ Abra o arquivo index.html em seu navegador.
 * Aprimorar animações e acessibilidade
 
 * Alternar entre modo claro e escuro (Dark Mode)
-
-* Utilizar código JS em POO
 
 ---
 
