@@ -1,4 +1,4 @@
-import { criaItemTarefa } from "./modules/manipulaDom";
+import { criaItemTarefa, criaBotaoRemover } from "./modules/manipulaDom.js";
 
 let contadorIdsTarefas = 0;
 const botaoAdicionarTarefa = document.querySelector(".btn-add") 
@@ -25,17 +25,7 @@ function limpaValorInput(){
     inputTarefa.value = ''
 }
 
-criaItemTarefa(inputTarefa.value, contadorIdsTarefas, criaBotaoRemover)
-
-function criaBotaoRemover(){
-    const botaoRemoverTarefa = document.createElement("button")
-    botaoRemoverTarefa.textContent = "X"
-    botaoRemoverTarefa.classList.add("btn-remover")
-    botaoRemoverTarefa.addEventListener("click", deletarTarefa)
-    return botaoRemoverTarefa
-}
-
-
+criaItemTarefa(inputTarefa.value, contadorIdsTarefas)
 
 
 function adicionarTarefa(){
