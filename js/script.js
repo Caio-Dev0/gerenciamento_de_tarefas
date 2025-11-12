@@ -1,4 +1,5 @@
 import { criaItemTarefa, criaBotaoRemover } from "./modules/manipulaDom.js";
+import { deletarTarefaCallback } from "./modules/tarefaLogica.js";
 
 let contadorIdsTarefas = 0;
 const botaoAdicionarTarefa = document.querySelector(".btn-add") 
@@ -6,6 +7,7 @@ const inputTarefa = document.querySelector("input")
 const containerListaTarefas = document.querySelector("ul") 
 let arrayTarefas = []
 
+const deletaTarefa = deletarTarefaCallback(containerListaTarefas, arrayTarefas)
 
 botaoAdicionarTarefa.addEventListener("click", adicionarTarefa) 
 
@@ -25,13 +27,6 @@ function limpaValorInput(){
     inputTarefa.value = ''
 }
 
-function deletarTarefa(evento){
-    const botao = evento.target;
-    const itemTarefa = botao.parentNode;
-    containerListaTarefas.removeChild(itemTarefa)
-    arrayTarefas = arrayTarefas.filter(tarefa => tarefa.id !== itemTarefa.id)
-    salvarTarefasLocalstorage()
-}
 
 
 function adicionarTarefa(){
@@ -41,7 +36,7 @@ function adicionarTarefa(){
         return
     } 
     contadorIdsTarefas += 1;
-    const itemTarefa = criaItemTarefa(conteudoTarefa, String(contadorIdsTarefas), deletarTarefa)
+    const itemTarefa = criaItemTarefa(conteudoTarefa, String(contadorIdsTarefas), deletaTarefa)
     containerListaTarefas.appendChild(itemTarefa)
     let objetoTarefa = {conteudo: conteudoTarefa, id: String(contadorIdsTarefas)}
     arrayTarefas.push(objetoTarefa)
@@ -51,7 +46,6 @@ function adicionarTarefa(){
 }
 
 
-criaItemTarefa(inputTarefa.value, contadorIdsTarefas, deletarTarefa)
 
 function resgatarTarefasLocalstorage(){
     const dadosArrayTarefas = JSON.parse(localStorage.getItem("Dados Tarefas"))
