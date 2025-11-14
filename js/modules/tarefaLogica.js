@@ -1,4 +1,5 @@
 import { criaItemTarefa } from "./manipulaDom.js";
+import { salvarIdLocalstorage, salvarTarefasLocalstorage } from "./storage.js";
 
 let arrayTarefas = []
 let contadorIdsTarefas = 0;
@@ -9,7 +10,7 @@ function deletarTarefaCallback(containerListaTarefas){
         const itemTarefa = botao.parentNode;
         containerListaTarefas.removeChild(itemTarefa)
         arrayTarefas = arrayTarefas.filter(tarefa => tarefa.id !== itemTarefa.id)
-        console.log(arrayTarefas)
+        salvarTarefasLocalstorage(arrayTarefas)
     }
 }
 
@@ -26,8 +27,8 @@ function adicionarTarefa(conteudoTarefa, containerListaTarefas){
     arrayTarefas.push(objetoTarefa)
     console.log(arrayTarefas)
     // limpaValorInput()
-    // salvarTarefasLocalstorage()
-    // salvarIdLocalstorage()
+    salvarTarefasLocalstorage(arrayTarefas)
+    salvarIdLocalstorage(contadorIdsTarefas)
 }
 
 export {deletarTarefaCallback, adicionarTarefa}
