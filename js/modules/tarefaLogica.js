@@ -20,13 +20,10 @@ function adicionarTarefa(conteudoTarefa, containerListaTarefas){
         return
     }
     contadorIdsTarefas = contadorIdsTarefas + 1;
-    console.log(contadorIdsTarefas)
     const itemTarefa = criaItemTarefa(conteudoTarefa, String(contadorIdsTarefas), deletarTarefaCallback(containerListaTarefas))
     containerListaTarefas.appendChild(itemTarefa)
     let objetoTarefa = {conteudo: conteudoTarefa, id: String(contadorIdsTarefas)}
     arrayTarefas.push(objetoTarefa)
-    console.log(arrayTarefas)
-    
     salvarTarefasLocalstorage(arrayTarefas)
     salvarIdLocalstorage(contadorIdsTarefas)
 }
@@ -40,7 +37,6 @@ function carregarTarefas(){
 function carregarId(){
     const contadorIdLocalstorage = JSON.parse(localStorage.getItem("Contador do ID"))
     contadorIdsTarefas = contadorIdLocalstorage
-    console.log(contadorIdsTarefas)
 }
 
 export {deletarTarefaCallback, adicionarTarefa, carregarTarefas, carregarId}
