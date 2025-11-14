@@ -31,4 +31,15 @@ function adicionarTarefa(conteudoTarefa, containerListaTarefas){
     salvarIdLocalstorage(contadorIdsTarefas)
 }
 
+function resgatarTarefasLocalstorage(){
+    const dadosArrayTarefas = JSON.parse(localStorage.getItem("Dados Tarefas"))
+    return dadosArrayTarefas
+}
+
+function resgatarContadorIdLocalstorage(){
+    const contadorIdLocalstorage = JSON.parse(localStorage.getItem("Contador do ID"))
+    contadorIdsTarefas = contadorIdLocalstorage
+    console.log(contadorIdsTarefas)
+}
+
 export {deletarTarefaCallback, adicionarTarefa}
