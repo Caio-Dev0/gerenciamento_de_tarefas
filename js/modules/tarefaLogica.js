@@ -1,7 +1,7 @@
 import { criaItemTarefa } from "./manipulaDom.js";
 
 let arrayTarefas = []
-
+let contadorIdsTarefas = 0;
 
 function deletarTarefaCallback(containerListaTarefas){
     return function deletarTarefa(evento){
@@ -13,12 +13,13 @@ function deletarTarefaCallback(containerListaTarefas){
     }
 }
 
-function adicionarTarefa(conteudoTarefa, contadorIdsTarefas, containerListaTarefas){
+function adicionarTarefa(conteudoTarefa, containerListaTarefas){
     if(conteudoTarefa === ''){
         alert("Coloque uma tarefa válida")
         return
     }
-    contadorIdsTarefas += 1;
+    contadorIdsTarefas = contadorIdsTarefas + 1;
+    console.log(contadorIdsTarefas)
     const itemTarefa = criaItemTarefa(conteudoTarefa, String(contadorIdsTarefas), deletarTarefaCallback(containerListaTarefas))
     containerListaTarefas.appendChild(itemTarefa)
     let objetoTarefa = {conteudo: conteudoTarefa, id: String(contadorIdsTarefas)}

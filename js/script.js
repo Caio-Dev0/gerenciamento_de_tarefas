@@ -1,7 +1,7 @@
 import { criaItemTarefa} from "./modules/manipulaDom.js";
 import { adicionarTarefa } from "./modules/tarefaLogica.js";
 
-let contadorIdsTarefas = 0;
+
 const botaoAdicionarTarefa = document.querySelector(".btn-add") 
 const inputTarefa = document.querySelector("input") 
 const containerListaTarefas = document.querySelector("ul") 
@@ -10,14 +10,10 @@ const containerListaTarefas = document.querySelector("ul")
 
 
 botaoAdicionarTarefa.addEventListener("click", () =>{
-    adicionarTarefa(valorInput, contadorIdsTarefas, containerListaTarefas)
+    adicionarTarefa(inputTarefa.value.trim(), containerListaTarefas)
+
 }) 
 
-
-function valorInput() {
-    const abc = inputTarefa.value.trim() 
-    return  abc
-} 
 
 
 function salvarTarefasLocalstorage(){
