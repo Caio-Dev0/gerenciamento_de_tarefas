@@ -1,53 +1,27 @@
 import { criaItemTarefa} from "./modules/manipulaDom.js";
-import { adicionarTarefa } from "./modules/tarefaLogica.js";
+import { adicionarTarefa, carregarTarefas, carregarId, deletarTarefaCallback } from "./modules/tarefaLogica.js";
 
 
 const botaoAdicionarTarefa = document.querySelector(".btn-add") 
 const inputTarefa = document.querySelector("input") 
 const containerListaTarefas = document.querySelector("ul") 
-
-
-
+let dadosArrayTarefas = carregarTarefas()
 
 botaoAdicionarTarefa.addEventListener("click", () =>{
     adicionarTarefa(inputTarefa.value.trim(), containerListaTarefas)
 
 }) 
 
-
-
-function limpaValorInput(){
-    inputTarefa.value = ''
-}
-
-
-
-
-
-
-
-function resgatarTarefasLocalstorage(){
-    const dadosArrayTarefas = JSON.parse(localStorage.getItem("Dados Tarefas"))
+function inicializarAplicacao(){
     for (const atributo of dadosArrayTarefas){
-        const itemTarefa = criaItemTarefa(atributo.conteudo)
-        itemTarefa.setAttribute("id", atributo.id)
-        const objetoTarefa = {conteudo: atributo.conteudo, id: atributo.id}
-        arrayTarefas.push(objetoTarefa)
+        const itemTarefa = criaItemTarefa(atributo.conteudo, atributo.id, deletarTarefaCallback(containerListaTarefas))
         containerListaTarefas.appendChild(itemTarefa)
     }
 }
 
-function resgatarContadorIdLocalstorage(){
-    const contadorIdLocalstorage = JSON.parse(localStorage.getItem("Contador do ID"))
-    contadorIdsTarefas = contadorIdLocalstorage
-    console.log(contadorIdsTarefas)
-}
 
-
-
-// resgatarTarefasLocalstorage()
-// resgatarContadorIdLocalstorage()
-
-
+carregarTarefas()
+carregarId()
+inicializarAplicacao()
 
 
