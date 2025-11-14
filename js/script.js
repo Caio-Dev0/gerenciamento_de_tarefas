@@ -16,15 +16,6 @@ botaoAdicionarTarefa.addEventListener("click", () =>{
 
 
 
-function salvarTarefasLocalstorage(){
-    localStorage.setItem("Dados Tarefas", JSON.stringify(arrayTarefas))
-}
-
-function salvarIdLocalstorage(){
-    localStorage.setItem("Contador do ID", JSON.stringify(contadorIdsTarefas))
-}
-
-
 function limpaValorInput(){
     inputTarefa.value = ''
 }
