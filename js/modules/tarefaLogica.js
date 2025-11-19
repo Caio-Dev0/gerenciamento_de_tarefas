@@ -4,7 +4,7 @@ import { salvarIdLocalstorage, salvarTarefasLocalstorage } from "./storage.js";
 let arrayTarefas = []
 let contadorIdsTarefas = 0;
 
-function deletarTarefaCallback(containerListaTarefas){
+function deletarTarefaClosure(containerListaTarefas){
     return function deletarTarefa(evento){
         const botao = evento.target;
         const itemTarefa = botao.parentNode;
@@ -14,13 +14,13 @@ function deletarTarefaCallback(containerListaTarefas){
     }
 }
 
-function adicionarTarefa(conteudoTarefa, containerListaTarefas){
+function adicionarTarefa(conteudoTarefa, containerListaTarefas, modal){
     if(conteudoTarefa === ''){
         alert("Coloque uma tarefa válida")
         return
     }
     contadorIdsTarefas = contadorIdsTarefas + 1;
-    const itemTarefa = criaItemTarefa(conteudoTarefa, String(contadorIdsTarefas), deletarTarefaCallback(containerListaTarefas), editarTarefa)
+    const itemTarefa = criaItemTarefa(conteudoTarefa, String(contadorIdsTarefas), deletarTarefaCallback(containerListaTarefas), abubu(modal))
     containerListaTarefas.appendChild(itemTarefa)
     let objetoTarefa = {conteudo: conteudoTarefa, id: String(contadorIdsTarefas)}
     arrayTarefas.push(objetoTarefa)
@@ -28,8 +28,12 @@ function adicionarTarefa(conteudoTarefa, containerListaTarefas){
     salvarIdLocalstorage(contadorIdsTarefas)
 }
 
-
-const editarTarefa = (evento) => a = console.log(evento.target)
+function editarTarefaClosure(modal){
+    return function editarTarefa(evento){ 
+        console.log(evento.target)
+        modal.style.display = 'block'
+    }
+}
 
 function carregarTarefas(){
     const dadosArrayTarefas = JSON.parse(localStorage.getItem("Dados Tarefas"))
@@ -42,4 +46,4 @@ function carregarId(){
     contadorIdsTarefas = contadorIdLocalstorage
 }
 
-export {deletarTarefaCallback, adicionarTarefa, carregarTarefas, carregarId, editarTarefa}
+export {deletarTarefaCallback, adicionarTarefa, carregarTarefas, carregarId, abubu}
