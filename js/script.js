@@ -9,8 +9,7 @@ let dadosArrayTarefas = carregarTarefas()
 const modaltarefa = document.querySelector(".edit-task-modal")
 
 botaoAdicionarTarefa.addEventListener("click", () =>{
-    adicionarTarefa(inputTarefa.value.trim(), containerListaTarefas, modaltarefa)
-
+    adicionarTarefa(inputTarefa, containerListaTarefas, modaltarefa)
 }) 
 
 function inicializarAplicacao(){

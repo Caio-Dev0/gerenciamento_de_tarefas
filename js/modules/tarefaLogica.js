@@ -15,14 +15,14 @@ function deletarTarefaClosure(containerListaTarefas){
 }
 
 function adicionarTarefa(conteudoTarefa, containerListaTarefas, modal){
-    if(conteudoTarefa === ''){
+    if(conteudoTarefa.value === ''){
         alert("Coloque uma tarefa válida")
         return
     }
     contadorIdsTarefas = contadorIdsTarefas + 1;
-    const itemTarefa = criaItemTarefa(conteudoTarefa, String(contadorIdsTarefas), deletarTarefaClosure(containerListaTarefas), editarTarefaClosure(modal))
+    const itemTarefa = criaItemTarefa(conteudoTarefa.value, String(contadorIdsTarefas), deletarTarefaClosure(containerListaTarefas), editarTarefaClosure(modal))
     containerListaTarefas.appendChild(itemTarefa)
-    let objetoTarefa = {conteudo: conteudoTarefa, id: String(contadorIdsTarefas)}
+    let objetoTarefa = {conteudo: conteudoTarefa.value, id: String(contadorIdsTarefas)}
     arrayTarefas.push(objetoTarefa)
     salvarTarefasLocalstorage(arrayTarefas)
     salvarIdLocalstorage(contadorIdsTarefas)
