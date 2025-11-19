@@ -24,6 +24,7 @@ function adicionarTarefa(conteudoTarefa, containerListaTarefas, modal){
     containerListaTarefas.appendChild(itemTarefa)
     let objetoTarefa = {conteudo: conteudoTarefa.value, id: String(contadorIdsTarefas)}
     arrayTarefas.push(objetoTarefa)
+    conteudoTarefa.value = ''
     salvarTarefasLocalstorage(arrayTarefas)
     salvarIdLocalstorage(contadorIdsTarefas)
 }
