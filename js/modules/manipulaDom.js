@@ -1,10 +1,10 @@
-function criaItemTarefa(conteudo, id, deletarTarefa){
+function criaItemTarefa(conteudo, id, deletarTarefa, editarTarefa){
     let itemTarefa = document.createElement("li")
     itemTarefa.setAttribute('id', id)
     itemTarefa.setAttribute("class", "itemTarefa")
     itemTarefa.textContent = conteudo
     const botaoRemover = criaBotaoRemover(deletarTarefa)
-    const botaoEditar = criaBotaoEditar()
+    const botaoEditar = criaBotaoEditar(editarTarefa)
     itemTarefa.appendChild(botaoRemover)
     itemTarefa.appendChild(botaoEditar)
     return itemTarefa
@@ -22,7 +22,7 @@ function criaBotaoEditar(editarTarefa){
     const botaoEditarTarefa = document.createElement("button")
     botaoEditarTarefa.textContent = "🪶"
     botaoEditarTarefa.classList.add("btn-edit")
-    // botaoRemoverTarefa.addEventListener("click", deletarTarefa)
+    botaoEditarTarefa.addEventListener("click", editarTarefa)
     return botaoEditarTarefa;
 }
 
