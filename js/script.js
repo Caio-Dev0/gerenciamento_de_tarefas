@@ -8,6 +8,8 @@ const containerListaTarefas = document.querySelector("ul")
 let dadosArrayTarefas = carregarTarefas()
 const modaltarefa = document.querySelector(".edit-task-modal")
 const botaoCancelaModal = document.querySelector(".btn-cancel")
+const inputEditaTarefa = document.querySelector("#task-edit-input")
+
 
 botaoAdicionarTarefa.addEventListener("click", () =>{
     adicionarTarefa(inputTarefa, containerListaTarefas, modaltarefa)
