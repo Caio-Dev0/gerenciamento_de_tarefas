@@ -36,6 +36,8 @@ function editarTarefaClosure(modal){
     }
 }
 
+const fechaPopUp = modal => modal.style.display = 'none'
+
 function carregarTarefas(){
     const dadosArrayTarefas = JSON.parse(localStorage.getItem("Dados Tarefas"))
     arrayTarefas = dadosArrayTarefas
@@ -47,4 +49,4 @@ function carregarId(){
     contadorIdsTarefas = contadorIdLocalstorage
 }
 
-export {deletarTarefaClosure, adicionarTarefa, carregarTarefas, carregarId, editarTarefaClosure}
+export {deletarTarefaClosure, adicionarTarefa, carregarTarefas, carregarId, editarTarefaClosure, fechaPopUp}
