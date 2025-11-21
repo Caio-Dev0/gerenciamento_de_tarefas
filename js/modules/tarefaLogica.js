@@ -32,8 +32,10 @@ function adicionarTarefa(conteudoTarefa, containerListaTarefas, modal){
 function editarTarefaClosure(modal){
     return function editarTarefa(evento){ 
         abrirPopUp(modal)
-        const itemTarefa = evento.target
-        console.log(itemTarefa)
+        const botaoEditarTarefa = evento.target
+        const itemTarefa = botaoEditarTarefa.parentNode
+        const conteudotarefa = itemTarefa.firstChild.textContent
+        console.log(conteudotarefa)
     }
 }
 
