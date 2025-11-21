@@ -12,7 +12,7 @@ const inputEditaTarefa = document.querySelector("#task-edit-input")
 
 
 botaoAdicionarTarefa.addEventListener("click", () =>{
-    adicionarTarefa(inputTarefa, containerListaTarefas, modaltarefa)
+    adicionarTarefa(inputTarefa, containerListaTarefas, modaltarefa, inputEditaTarefa)
 }) 
 
 botaoCancelaModal.addEventListener('click', () =>{
