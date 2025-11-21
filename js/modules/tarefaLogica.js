@@ -31,11 +31,13 @@ function adicionarTarefa(conteudoTarefa, containerListaTarefas, modal){
 
 function editarTarefaClosure(modal){
     return function editarTarefa(evento){ 
-        console.log(evento.target)
-        modal.style.display = 'block'
+        abrirPopUp(modal)
+        const itemTarefa = evento.target
+        console.log(itemTarefa)
     }
 }
 
+const abrirPopUp = modal => modal.style.display = "block"
 const fechaPopUp = modal => modal.style.display = 'none'
 
 function carregarTarefas(){
