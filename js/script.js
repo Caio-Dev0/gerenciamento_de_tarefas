@@ -1,5 +1,5 @@
 import { criaItemTarefa} from "./modules/manipulaDom.js";
-import { adicionarTarefa, carregarTarefas, carregarId, deletarTarefaClosure } from "./modules/tarefaLogica.js";
+import { adicionarTarefa, carregarTarefas, carregarId, deletarTarefaClosure, fechaPopUp} from "./modules/tarefaLogica.js";
 
 
 const botaoAdicionarTarefa = document.querySelector(".btn-add") 
@@ -12,6 +12,10 @@ const botaoCancelaModal = document.querySelector(".btn-cancel")
 botaoAdicionarTarefa.addEventListener("click", () =>{
     adicionarTarefa(inputTarefa, containerListaTarefas, modaltarefa)
 }) 
+
+botaoCancelaModal.addEventListener('click', () =>{
+    fechaPopUp(modaltarefa)
+})
 
 function inicializarAplicacao(){
     for (const atributo of dadosArrayTarefas){
