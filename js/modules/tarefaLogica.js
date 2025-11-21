@@ -14,13 +14,13 @@ function deletarTarefaClosure(containerListaTarefas){
     }
 }
 
-function adicionarTarefa(conteudoTarefa, containerListaTarefas, modal){
+function adicionarTarefa(conteudoTarefa, containerListaTarefas, modal, inputEditar){
     if(conteudoTarefa.value === ''){
         alert("Coloque uma tarefa válida")
         return
     }
     contadorIdsTarefas = contadorIdsTarefas + 1;
-    const itemTarefa = criaItemTarefa(conteudoTarefa.value, String(contadorIdsTarefas), deletarTarefaClosure(containerListaTarefas), editarTarefaClosure(modal))
+    const itemTarefa = criaItemTarefa(conteudoTarefa.value, String(contadorIdsTarefas), deletarTarefaClosure(containerListaTarefas), editarTarefaClosure(modal, inputEditar))
     containerListaTarefas.appendChild(itemTarefa)
     let objetoTarefa = {conteudo: conteudoTarefa.value, id: String(contadorIdsTarefas)}
     arrayTarefas.push(objetoTarefa)
@@ -29,13 +29,13 @@ function adicionarTarefa(conteudoTarefa, containerListaTarefas, modal){
     salvarIdLocalstorage(contadorIdsTarefas)
 }
 
-function editarTarefaClosure(modal){
+function editarTarefaClosure(modal, inputEditar){
     return function editarTarefa(evento){ 
         abrirPopUp(modal)
         const botaoEditarTarefa = evento.target
         const itemTarefa = botaoEditarTarefa.parentNode
         const conteudotarefa = itemTarefa.firstChild.textContent
-        console.log(conteudotarefa)
+        inputEditar.value = conteudotarefa
     }
 }
 
