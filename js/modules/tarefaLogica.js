@@ -40,6 +40,11 @@ function editarTarefaClosure(modal, inputEditar){
     }
 }
 
+function atualizarTarefa(inputEditar){
+    const conteudoInput = inputEditar.value
+    console.log(conteudoInput)
+}
+
 
 function carregarTarefas(){
     const dadosArrayTarefas = JSON.parse(localStorage.getItem("Dados Tarefas"))
