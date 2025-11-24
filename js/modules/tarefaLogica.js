@@ -57,4 +57,4 @@ function carregarId(){
     contadorIdsTarefas = contadorIdLocalstorage
 }
 
-export {deletarTarefaClosure, adicionarTarefa, carregarTarefas, carregarId, editarTarefaClosure}
+export {deletarTarefaClosure, adicionarTarefa, carregarTarefas, carregarId, editarTarefaClosure, atualizarTarefa}
