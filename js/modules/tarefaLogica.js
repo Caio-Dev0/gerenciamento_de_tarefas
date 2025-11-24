@@ -49,7 +49,10 @@ function atualizarTarefa(inputEditar, modal){
         alert("Mude para uma tarefa válida")
         return
     }
+    const novaTarefa = arrayTarefas.find(a => a.id == tarefaSelecionada.id)
+    novaTarefa.conteudo = conteudoInput
     tarefaSelecionada.firstChild.textContent = conteudoInput
+    salvarTarefasLocalstorage(arrayTarefas)
     fechaPopUp(modal)
 }
 
