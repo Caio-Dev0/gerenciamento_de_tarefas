@@ -1,6 +1,6 @@
 import { criaItemTarefa} from "./modules/manipulaDom.js";
-import { adicionarTarefa, carregarTarefas, carregarId, deletarTarefaClosure, fechaPopUp} from "./modules/tarefaLogica.js";
-
+import { adicionarTarefa, carregarTarefas, carregarId, deletarTarefaClosure} from "./modules/tarefaLogica.js";
+import { fechaPopUp } from "./modules/ui.js";
 
 const botaoAdicionarTarefa = document.querySelector(".btn-add") 
 const inputTarefa = document.querySelector("input") 

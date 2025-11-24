@@ -1,5 +1,6 @@
 import { criaItemTarefa } from "./manipulaDom.js";
 import { salvarIdLocalstorage, salvarTarefasLocalstorage } from "./storage.js";
+import { abrirPopUp} from "./ui.js";
 
 let arrayTarefas = []
 let contadorIdsTarefas = 0;
@@ -39,8 +40,6 @@ function editarTarefaClosure(modal, inputEditar){
     }
 }
 
-const abrirPopUp = modal => modal.style.display = "block"
-const fechaPopUp = modal => modal.style.display = 'none'
 
 function carregarTarefas(){
     const dadosArrayTarefas = JSON.parse(localStorage.getItem("Dados Tarefas"))
@@ -53,4 +52,4 @@ function carregarId(){
     contadorIdsTarefas = contadorIdLocalstorage
 }
 
-export {deletarTarefaClosure, adicionarTarefa, carregarTarefas, carregarId, editarTarefaClosure, fechaPopUp}
+export {deletarTarefaClosure, adicionarTarefa, carregarTarefas, carregarId, editarTarefaClosure}
