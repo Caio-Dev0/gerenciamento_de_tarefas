@@ -4,6 +4,7 @@ import { abrirPopUp} from "./ui.js";
 
 let arrayTarefas = []
 let contadorIdsTarefas = 0;
+let tarefaSelecionada
 
 function deletarTarefaClosure(containerListaTarefas){
     return function deletarTarefa(evento){
@@ -35,14 +36,16 @@ function editarTarefaClosure(modal, inputEditar){
         abrirPopUp(modal)
         const botaoEditarTarefa = evento.target
         const itemTarefa = botaoEditarTarefa.parentNode
+        tarefaSelecionada = itemTarefa
         const conteudotarefa = itemTarefa.firstChild.textContent
         inputEditar.value = conteudotarefa
     }
 }
 
+
 function atualizarTarefa(inputEditar){
     const conteudoInput = inputEditar.value
-    console.log(conteudoInput)
+    tarefaSelecionada.firstChild.textContent = conteudoInput
 }
 
 
