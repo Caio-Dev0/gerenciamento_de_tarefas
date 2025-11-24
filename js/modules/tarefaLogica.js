@@ -45,6 +45,10 @@ function editarTarefaClosure(modal, inputEditar){
 
 function atualizarTarefa(inputEditar){
     const conteudoInput = inputEditar.value
+    if(conteudoInput == ''){
+        alert("Mude para uma tarefa válida")
+        return
+    }
     tarefaSelecionada.firstChild.textContent = conteudoInput
 }
 
