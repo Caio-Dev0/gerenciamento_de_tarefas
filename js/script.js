@@ -20,7 +20,7 @@ botaoCancelaModal.addEventListener('click', () =>{
 })
 
 botaoAtualizaTarefa.addEventListener('click', () =>{
-    atualizarTarefa(inputEditaTarefa)
+    atualizarTarefa(inputEditaTarefa, modaltarefa)
 })
 
 function inicializarAplicacao(){

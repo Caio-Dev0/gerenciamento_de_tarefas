@@ -1,6 +1,6 @@
 import { criaItemTarefa } from "./manipulaDom.js";
 import { salvarIdLocalstorage, salvarTarefasLocalstorage } from "./storage.js";
-import { abrirPopUp} from "./ui.js";
+import { abrirPopUp, fechaPopUp} from "./ui.js";
 
 let arrayTarefas = []
 let contadorIdsTarefas = 0;
@@ -43,13 +43,14 @@ function editarTarefaClosure(modal, inputEditar){
 }
 
 
-function atualizarTarefa(inputEditar){
+function atualizarTarefa(inputEditar, modal){
     const conteudoInput = inputEditar.value
     if(conteudoInput == ''){
         alert("Mude para uma tarefa válida")
         return
     }
     tarefaSelecionada.firstChild.textContent = conteudoInput
+    fechaPopUp(modal)
 }
 
 
