@@ -1,10 +1,12 @@
 import { criaItemTarefa } from "./manipulaDom.js";
 import { salvarIdLocalstorage, salvarTarefasLocalstorage } from "./storage.js";
+import { abrirPopUp, fechaPopUp} from "./ui.js";
 
 let arrayTarefas = []
 let contadorIdsTarefas = 0;
+let tarefaSelecionada
 
-function deletarTarefaCallback(containerListaTarefas){
+function deletarTarefaClosure(containerListaTarefas){
     return function deletarTarefa(evento){
         const botao = evento.target;
         const itemTarefa = botao.parentNode;
@@ -14,19 +16,46 @@ function deletarTarefaCallback(containerListaTarefas){
     }
 }
 
-function adicionarTarefa(conteudoTarefa, containerListaTarefas){
-    if(conteudoTarefa === ''){
+function adicionarTarefa(conteudoTarefa, containerListaTarefas, modal, inputEditar){
+    if(conteudoTarefa.value === ''){
         alert("Coloque uma tarefa válida")
         return
     }
     contadorIdsTarefas = contadorIdsTarefas + 1;
-    const itemTarefa = criaItemTarefa(conteudoTarefa, String(contadorIdsTarefas), deletarTarefaCallback(containerListaTarefas))
+    const itemTarefa = criaItemTarefa(conteudoTarefa.value, String(contadorIdsTarefas), deletarTarefaClosure(containerListaTarefas), editarTarefaClosure(modal, inputEditar))
     containerListaTarefas.appendChild(itemTarefa)
-    let objetoTarefa = {conteudo: conteudoTarefa, id: String(contadorIdsTarefas)}
+    let objetoTarefa = {conteudo: conteudoTarefa.value, id: String(contadorIdsTarefas)}
     arrayTarefas.push(objetoTarefa)
+    conteudoTarefa.value = ''
     salvarTarefasLocalstorage(arrayTarefas)
     salvarIdLocalstorage(contadorIdsTarefas)
 }
+
+function editarTarefaClosure(modal, inputEditar){
+    return function editarTarefa(evento){ 
+        abrirPopUp(modal)
+        const botaoEditarTarefa = evento.target
+        const itemTarefa = botaoEditarTarefa.parentNode
+        tarefaSelecionada = itemTarefa
+        const conteudotarefa = itemTarefa.firstChild.textContent
+        inputEditar.value = conteudotarefa
+    }
+}
+
+
+function atualizarTarefa(inputEditar, modal){
+    const conteudoInput = inputEditar.value
+    if(conteudoInput == ''){
+        alert("Mude para uma tarefa válida")
+        return
+    }
+    const novaTarefa = arrayTarefas.find(a => a.id == tarefaSelecionada.id)
+    novaTarefa.conteudo = conteudoInput
+    tarefaSelecionada.firstChild.textContent = conteudoInput
+    salvarTarefasLocalstorage(arrayTarefas)
+    fechaPopUp(modal)
+}
+
 
 function carregarTarefas(){
     const dadosArrayTarefas = JSON.parse(localStorage.getItem("Dados Tarefas"))
@@ -39,4 +68,4 @@ function carregarId(){
     contadorIdsTarefas = contadorIdLocalstorage
 }
 
-export {deletarTarefaCallback, adicionarTarefa, carregarTarefas, carregarId}
+export {deletarTarefaClosure, adicionarTarefa, carregarTarefas, carregarId, editarTarefaClosure, atualizarTarefa}
