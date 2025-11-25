@@ -1,5 +1,5 @@
 import { criaItemTarefa} from "./modules/manipulaDom.js";
-import { adicionarTarefa, carregarTarefas, carregarId, deletarTarefaClosure, atualizarTarefa} from "./modules/tarefaLogica.js";
+import { adicionarTarefa, carregarTarefas, carregarId, deletarTarefaClosure, atualizarTarefa, editarTarefaClosure} from "./modules/tarefaLogica.js";
 import { fechaPopUp } from "./modules/ui.js";
 
 const botaoAdicionarTarefa = document.querySelector(".btn-add") 
@@ -25,7 +25,7 @@ botaoAtualizaTarefa.addEventListener('click', () =>{
 
 function inicializarAplicacao(){
     for (const atributo of dadosArrayTarefas){
-        const itemTarefa = criaItemTarefa(atributo.conteudo, atributo.id, deletarTarefaClosure(containerListaTarefas))
+        const itemTarefa = criaItemTarefa(atributo.conteudo, atributo.id, deletarTarefaClosure(containerListaTarefas), editarTarefaClosure(modaltarefa, inputEditaTarefa))
         containerListaTarefas.appendChild(itemTarefa)
     }
 }
