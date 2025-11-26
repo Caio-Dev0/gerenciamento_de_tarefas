@@ -56,6 +56,10 @@ function atualizarTarefa(inputEditar, modal){
     fechaPopUp(modal)
 }
 
+function definePrioridade(evento){
+    console.log(evento.target)
+}
+
 
 function carregarTarefas(){
     const dadosArrayTarefas = JSON.parse(localStorage.getItem("Dados Tarefas"))
@@ -68,4 +72,4 @@ function carregarId(){
     contadorIdsTarefas = contadorIdLocalstorage
 }
 
-export {deletarTarefaClosure, adicionarTarefa, carregarTarefas, carregarId, editarTarefaClosure, atualizarTarefa}
+export {deletarTarefaClosure, adicionarTarefa, carregarTarefas, carregarId, editarTarefaClosure, atualizarTarefa, definePrioridade}
