@@ -57,7 +57,9 @@ function atualizarTarefa(inputEditar, modal){
 }
 
 function definePrioridade(evento){
-    console.log(evento.target)
+    const botaoRadio = evento.target
+    const labelRadio = botaoRadio.parentNode
+    console.log(labelRadio.textContent)
 }
 
 
