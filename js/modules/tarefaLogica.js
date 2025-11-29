@@ -22,6 +22,10 @@ function adicionarTarefa(conteudoTarefa, containerListaTarefas, modal, inputEdit
         alert("Coloque uma tarefa válida")
         return
     }
+    if(categoriaSelecionada === undefined){
+        alert("Coloque uma categoria de tarefa")
+        return
+    }
     contadorIdsTarefas = contadorIdsTarefas + 1;
     const itemTarefa = criaItemTarefa(conteudoTarefa.value, String(contadorIdsTarefas), deletarTarefaClosure(containerListaTarefas), editarTarefaClosure(modal, inputEditar), categoriaSelecionada)
     containerListaTarefas.appendChild(itemTarefa)
