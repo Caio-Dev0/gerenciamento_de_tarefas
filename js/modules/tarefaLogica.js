@@ -59,7 +59,7 @@ function atualizarTarefa(inputEditar, modal){
 
 function definePrioridade(evento){
     const botaoRadio = evento.target
-    categoriaSelecionada = botaoRadio.parentNode.textContent
+    categoriaSelecionada = botaoRadio.parentNode.textContent.toLowerCase()
 }
 
 
