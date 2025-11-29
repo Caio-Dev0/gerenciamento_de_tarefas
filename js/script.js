@@ -28,7 +28,7 @@ botoesPrioridade.forEach(a => a.addEventListener("click", definePrioridade))
 
 function inicializarAplicacao(){
     for (const atributo of dadosArrayTarefas){
-        const itemTarefa = criaItemTarefa(atributo.conteudo, atributo.id, deletarTarefaClosure(containerListaTarefas), editarTarefaClosure(modaltarefa, inputEditaTarefa))
+        const itemTarefa = criaItemTarefa(atributo.conteudo, atributo.id, deletarTarefaClosure(containerListaTarefas), editarTarefaClosure(modaltarefa, inputEditaTarefa), atributo.categoria)
         containerListaTarefas.appendChild(itemTarefa)
     }
 }
