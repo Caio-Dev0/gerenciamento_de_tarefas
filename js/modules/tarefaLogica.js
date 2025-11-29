@@ -5,6 +5,7 @@ import { abrirPopUp, fechaPopUp} from "./ui.js";
 let arrayTarefas = []
 let contadorIdsTarefas = 0;
 let tarefaSelecionada
+let categoriaSelecionada
 
 function deletarTarefaClosure(containerListaTarefas){
     return function deletarTarefa(evento){
@@ -58,8 +59,7 @@ function atualizarTarefa(inputEditar, modal){
 
 function definePrioridade(evento){
     const botaoRadio = evento.target
-    const labelRadio = botaoRadio.parentNode
-    console.log(labelRadio.textContent)
+    categoriaSelecionada = botaoRadio.parentNode.textContent
 }
 
 
