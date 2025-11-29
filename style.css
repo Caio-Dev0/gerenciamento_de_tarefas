@@ -11,9 +11,10 @@
     --cor-pessego: #FFE8DB;
     --cor-preto: #000000;
     --tipografia: "Caveat", cursive;
-    --tarefa-rotineira: #16a34a;
-    --tarefa-importante: #fb923c;
-    --tarefa-urgente: #dc2626;
+    --tarefa-rotineira: #166534;
+    --tarefa-importante: #ea580c;
+    --tarefa-urgente: #b91c1c;
+    
 }
 
 
@@ -113,8 +114,6 @@ body{
     justify-content: space-between;
     align-items: center;
     font-size: var(--fonte-grande);
-    background-color: var(--cor-pessego);
-    color: var(--cor-AzulEscuuro);
     padding: 1rem;
     margin: 2rem 2rem;
     font-family: var(--tipografia);
@@ -125,6 +124,21 @@ body{
 .task-list > .itemTarefa:hover{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: 0.3s ease;
+}
+
+.rotineira{
+    background-color: var(--tarefa-rotineira);
+    color: var(--cor-brancoAcinzentado)
+}
+
+.importante{
+    background-color: var(--tarefa-importante);
+    color: var(--cor-brancoAcinzentado)
+}
+
+.urgente{
+    background-color: var(--tarefa-urgente);
+    color: var(--cor-brancoAcinzentado)   
 }
 
 
