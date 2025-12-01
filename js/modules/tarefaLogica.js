@@ -25,7 +25,7 @@ function adicionarTarefa(conteudoTarefa, containerListaTarefas, modal, inputEdit
         alert("Coloque uma tarefa válida")
         return
     }
-    if(categoriaSelecionada === undefined){
+    if(categoriaTarefa.categoria === undefined){
         alert("Coloque uma categoria de tarefa")
         return
     }
