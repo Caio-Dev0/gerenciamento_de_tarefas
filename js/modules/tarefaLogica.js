@@ -30,11 +30,14 @@ function adicionarTarefa(conteudoTarefa, containerListaTarefas, modal, inputEdit
         return
     }
     contadorIdsTarefas = contadorIdsTarefas + 1;
-    const itemTarefa = criaItemTarefa(conteudoTarefa.value, String(contadorIdsTarefas), deletarTarefaClosure(containerListaTarefas), editarTarefaClosure(modal, inputEditar), categoriaTarefa.categoria)
-    containerListaTarefas.appendChild(itemTarefa)
     let objetoTarefa = {conteudo: conteudoTarefa.value, id: String(contadorIdsTarefas), categoria: categoriaTarefa.categoria, pesoCategoria: categoriaTarefa.valorCategoria}
     arrayTarefas.push(objetoTarefa)
     arrayTarefas.sort((a, b) => a.pesoCategoria - b.pesoCategoria)
+    containerListaTarefas.textContent = ''
+    for (const atributo of arrayTarefas){
+        const itemTarefa = criaItemTarefa(atributo.conteudo, atributo.id, deletarTarefaClosure(containerListaTarefas), editarTarefaClosure(modal, inputEditar), atributo.categoria)
+        containerListaTarefas.appendChild(itemTarefa)
+    }
     conteudoTarefa.value = ''
     salvarTarefasLocalstorage(arrayTarefas)
     salvarIdLocalstorage(contadorIdsTarefas)
