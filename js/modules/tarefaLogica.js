@@ -5,7 +5,10 @@ import { abrirPopUp, fechaPopUp} from "./ui.js";
 let arrayTarefas = []
 let contadorIdsTarefas = 0;
 let tarefaSelecionada
-let categoriaSelecionada
+let categoriaTarefa = {
+    categoria: undefined,
+    valorCategoria: undefined
+}
 
 function deletarTarefaClosure(containerListaTarefas){
     return function deletarTarefa(evento){
