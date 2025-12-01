@@ -34,6 +34,7 @@ function adicionarTarefa(conteudoTarefa, containerListaTarefas, modal, inputEdit
     containerListaTarefas.appendChild(itemTarefa)
     let objetoTarefa = {conteudo: conteudoTarefa.value, id: String(contadorIdsTarefas), categoria: categoriaTarefa.categoria, pesoCategoria: categoriaTarefa.valorCategoria}
     arrayTarefas.push(objetoTarefa)
+    arrayTarefas.sort((a, b) => a.pesoCategoria - b.pesoCategoria)
     conteudoTarefa.value = ''
     salvarTarefasLocalstorage(arrayTarefas)
     salvarIdLocalstorage(contadorIdsTarefas)
