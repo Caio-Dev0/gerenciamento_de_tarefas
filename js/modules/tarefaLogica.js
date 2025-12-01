@@ -32,7 +32,7 @@ function adicionarTarefa(conteudoTarefa, containerListaTarefas, modal, inputEdit
     contadorIdsTarefas = contadorIdsTarefas + 1;
     const itemTarefa = criaItemTarefa(conteudoTarefa.value, String(contadorIdsTarefas), deletarTarefaClosure(containerListaTarefas), editarTarefaClosure(modal, inputEditar), categoriaTarefa.categoria)
     containerListaTarefas.appendChild(itemTarefa)
-    let objetoTarefa = {conteudo: conteudoTarefa.value, id: String(contadorIdsTarefas), categoria: categoriaSelecionada}
+    let objetoTarefa = {conteudo: conteudoTarefa.value, id: String(contadorIdsTarefas), categoria: categoriaTarefa.categoria, pesoCategoria: categoriaTarefa.valorCategoria}
     arrayTarefas.push(objetoTarefa)
     conteudoTarefa.value = ''
     salvarTarefasLocalstorage(arrayTarefas)
