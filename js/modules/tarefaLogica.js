@@ -66,9 +66,18 @@ function atualizarTarefa(inputEditar, modal){
 
 function definePrioridade(evento){
     const botaoRadio = evento.target
-    categoriaSelecionada = botaoRadio.parentNode.textContent.toLowerCase()
+    let categoriaLabel = botaoRadio.parentNode.textContent.toLowerCase()
+    if(categoriaLabel == 'urgente'){
+        categoriaTarefa.categoria = categoriaLabel
+        categoriaTarefa.valorCategoria = 1
+    }else if(categoriaLabel == 'importante'){
+        categoriaTarefa.categoria = categoriaLabel
+        categoriaTarefa.valorCategoria = 2        
+    }else{
+        categoriaTarefa.categoria = categoriaLabel
+        categoriaTarefa.valorCategoria = 3
+    }
 }
-
 
 function carregarTarefas(){
     const dadosArrayTarefas = JSON.parse(localStorage.getItem("Dados Tarefas"))
