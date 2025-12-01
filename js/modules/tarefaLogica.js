@@ -34,10 +34,10 @@ function adicionarTarefa(conteudoTarefa, containerListaTarefas, modal, inputEdit
     arrayTarefas.push(objetoTarefa)
     arrayTarefas.sort((a, b) => a.pesoCategoria - b.pesoCategoria)
     containerListaTarefas.textContent = ''
-    for (const atributo of arrayTarefas){
+    arrayTarefas.forEach(atributo => {
         const itemTarefa = criaItemTarefa(atributo.conteudo, atributo.id, deletarTarefaClosure(containerListaTarefas), editarTarefaClosure(modal, inputEditar), atributo.categoria)
         containerListaTarefas.appendChild(itemTarefa)
-    }
+    })
     conteudoTarefa.value = ''
     salvarTarefasLocalstorage(arrayTarefas)
     salvarIdLocalstorage(contadorIdsTarefas)
