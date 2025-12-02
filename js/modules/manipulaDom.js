@@ -1,7 +1,8 @@
-function criaItemTarefa(conteudo, id, deletarTarefa, editarTarefa){
+function criaItemTarefa(conteudo, id, deletarTarefa, editarTarefa, categoria){
     let itemTarefa = document.createElement("li")
     itemTarefa.setAttribute('id', id)
     itemTarefa.setAttribute("class", "itemTarefa")
+    itemTarefa.classList.add(categoria)
     itemTarefa.textContent = conteudo
     const botaoRemover = criaBotaoRemover(deletarTarefa)
     const botaoEditar = criaBotaoEditar(editarTarefa)

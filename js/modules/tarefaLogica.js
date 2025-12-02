@@ -5,6 +5,10 @@ import { abrirPopUp, fechaPopUp} from "./ui.js";
 let arrayTarefas = []
 let contadorIdsTarefas = 0;
 let tarefaSelecionada
+let categoriaTarefa = {
+    categoria: undefined,
+    valorCategoria: undefined
+}
 
 function deletarTarefaClosure(containerListaTarefas){
     return function deletarTarefa(evento){
@@ -21,11 +25,19 @@ function adicionarTarefa(conteudoTarefa, containerListaTarefas, modal, inputEdit
         alert("Coloque uma tarefa válida")
         return
     }
+    if(categoriaTarefa.categoria === undefined){
+        alert("Coloque uma categoria de tarefa")
+        return
+    }
     contadorIdsTarefas = contadorIdsTarefas + 1;
-    const itemTarefa = criaItemTarefa(conteudoTarefa.value, String(contadorIdsTarefas), deletarTarefaClosure(containerListaTarefas), editarTarefaClosure(modal, inputEditar))
-    containerListaTarefas.appendChild(itemTarefa)
-    let objetoTarefa = {conteudo: conteudoTarefa.value, id: String(contadorIdsTarefas)}
+    let objetoTarefa = {conteudo: conteudoTarefa.value, id: String(contadorIdsTarefas), categoria: categoriaTarefa.categoria, pesoCategoria: categoriaTarefa.valorCategoria}
     arrayTarefas.push(objetoTarefa)
+    arrayTarefas.sort((a, b) => a.pesoCategoria - b.pesoCategoria)
+    containerListaTarefas.textContent = ''
+    arrayTarefas.forEach(atributo => {
+        const itemTarefa = criaItemTarefa(atributo.conteudo, atributo.id, deletarTarefaClosure(containerListaTarefas), editarTarefaClosure(modal, inputEditar), atributo.categoria)
+        containerListaTarefas.appendChild(itemTarefa)
+    })
     conteudoTarefa.value = ''
     salvarTarefasLocalstorage(arrayTarefas)
     salvarIdLocalstorage(contadorIdsTarefas)
@@ -56,6 +68,20 @@ function atualizarTarefa(inputEditar, modal){
     fechaPopUp(modal)
 }
 
+function definePrioridade(evento){
+    const botaoRadio = evento.target
+    let categoriaLabel = botaoRadio.parentNode.textContent.toLowerCase()
+    if(categoriaLabel == 'urgente'){
+        categoriaTarefa.categoria = categoriaLabel
+        categoriaTarefa.valorCategoria = 1
+    }else if(categoriaLabel == 'importante'){
+        categoriaTarefa.categoria = categoriaLabel
+        categoriaTarefa.valorCategoria = 2        
+    }else{
+        categoriaTarefa.categoria = categoriaLabel
+        categoriaTarefa.valorCategoria = 3
+    }
+}
 
 function carregarTarefas(){
     const dadosArrayTarefas = JSON.parse(localStorage.getItem("Dados Tarefas"))
@@ -68,4 +94,4 @@ function carregarId(){
     contadorIdsTarefas = contadorIdLocalstorage
 }
 
-export {deletarTarefaClosure, adicionarTarefa, carregarTarefas, carregarId, editarTarefaClosure, atualizarTarefa}
+export {deletarTarefaClosure, adicionarTarefa, carregarTarefas, carregarId, editarTarefaClosure, atualizarTarefa, definePrioridade}
