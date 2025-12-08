@@ -1,22 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 
 :root{
-    --fonte-grande: 3.2rem;
-    --fonte-media: 2.4rem;
-    --fonte-pequena: 1.6rem;
-    --cor-brancoAcinzentado: #F7F7F7;
-    --cor-AzulEscuuro: #244058;
-    --cor-bg: #5682B1;
-    --cor-removeBtn: #8B0000;
-    --cor-pessego: #FFE8DB;
-    --cor-preto: #000000;
-    --tipografia: "Caveat", cursive;
-    --tarefa-rotineira: #166534;
-    --tarefa-importante: #ea580c;
-    --tarefa-urgente: #b91c1c;
-    
+    --font-32: 3.2rem;
+    --font-24: 2.4rem;
+    --font-16: 1.6rem;
+    --font-14: 1.4rem;
+    --font-12: 1.2rem;
+    --font-8: 0.8rem;
+    --preto-azulado: #1C232B;
+    --verde: #16A34A;
+    --vermelho: #DC2626;
+    --laranja: #EA580C;
+    --branco: #FFFFFF;
+    --roxo: #9333EA;
+    --vermelho-fraco: rgba(220, 38, 38, 0.60);
+    --verde-fraco: rgba(22, 163, 74, 0.5);
+    --laranja-fraco: rgba(234, 88, 12, 0.6);
+    --vermelho-fraco-2: rgba(220, 38, 38, 0.35);
+    --verde-fraco-2: rgba(22, 163, 74, 0.35);
+    --laranja-fraco-2: rgba(234, 88, 12, 0.35);
+    --tipografia: 'Poppins', sans-serif;
+    --space-104: 10.4rem
+    --space-40: 4.0rem;
+    --space-16: 1.6rem;
+    --space-14: 1.4rem;
+    --space-8: 0.8rem;
+    --drop-shadow-roxo: 0px 4px 4px rgba(138, 56, 245, 0.3);
+    --drop-shadow-verde: 0px 4px 4px rgba(22, 163, 74, 0.5);
+    --drop-shadow-laranja: 0px 4px 4px rgba(234, 88, 12, 0.6);
+    --drop-shadow-vermelho: 0px 4px 4px rgba(220, 38, 38, 0.60);
 }
-
 
 html, body{
     padding: 0;
@@ -75,6 +88,7 @@ body{
     color: var(--cor-preto);
     border-radius: 1rem;
     border: 1px solid black;
+
 }
 
 .task-header > .btn-add{
@@ -91,11 +105,9 @@ body{
 }
 
 .btn-add:hover{
-    background-color: var(--cor-pessego);
-    color: var(--cor-AzulEscuuro);
-    border-color: var(--cor-pessego);
+
     transition: 0.3s ease;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: var(--drop-shadow-roxo)
 }
 
 .task-list{
