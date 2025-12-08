@@ -6,8 +6,8 @@ function criaItemTarefa(conteudo, id, deletarTarefa, editarTarefa, categoria){
     itemTarefa.textContent = conteudo
     const botaoRemover = criaBotaoRemover(deletarTarefa)
     const botaoEditar = criaBotaoEditar(editarTarefa)
-    itemTarefa.appendChild(botaoRemover)
     itemTarefa.appendChild(botaoEditar)
+    itemTarefa.appendChild(botaoRemover)
     return itemTarefa
 }
 
