@@ -2,38 +2,39 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2">
     <title>Gerenciador de Tarefas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-    <div class="task-container">
+    <main class="task-container">
         <header class="title-header">
             <h1>Lista de tarefas</h1>
         </header>
-        <div class="task-header">
-            <input class='task-input' type="text">
-            <div class="priority">
+        <form class="task-header">
+            <input class='task-input' type="text" aria-label="Adicione o nome de sua tarefa">
+            <fieldset class="priority">
+                <legend>Prioridade Tarefa</legend>
                 <label for="urgente">Urgente<input type="radio" name="prioridade" id="urgente" class="priority-urgente"></label>
                 <label for="importante">Importante<input type="radio" name="prioridade" id="importante" class="priority-importante"></label>  
                 <label for="rotineira">Rotineira<input type="radio" name="prioridade" id="rotineira" class="priority-rotineira"></label>
-            </div>
+            </fieldset>
             <button class="btn-add btn">Adicionar tarefa</button>
-        </div>
+        </form>
 
         <ul class="task-list">
         </ul>
 
-        <div class="edit-task-modal">
+        <dialog class="edit-task-modal">
             <div class="container-edit-task">
-                <label for="task-edit-input"></label>
+                <label for="task-edit-input">Edite sua tarefa</label>
                 <input type="text" name="task-edit-input" id="task-edit-input">
             </div>
             <button class="btn-update btn">Atualizar Tarefa</button>
             <button class="btn-cancel btn">Cancelar</button>
-        </div>
-    </div>
+        </dialog>
+    </main>
 
 
 <script src="/js/script.js" type="module"></script>

@@ -57,7 +57,7 @@ function editarTarefaClosure(modal, inputEditar){
 
 function atualizarTarefa(inputEditar, modal){
     const conteudoInput = inputEditar.value
-    if(conteudoInput == ''){
+    if(conteudoInput == '' || conteudoInput == tarefaSelecionada.firstChild.textContent){
         alert("Mude para uma tarefa válida")
         return
     }
