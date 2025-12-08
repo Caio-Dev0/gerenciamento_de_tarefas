@@ -13,7 +13,10 @@
     --laranja: #EA580C;
     --branco: #FFFFFF;
     --roxo: #9333EA;
+    --preto-forte: rgba(0, 0, 0, 0.75);
+    --vermelho-medio: rgba(220, 38, 38, 0.9);
     --vermelho-fraco: rgba(220, 38, 38, 0.60);
+    --preto-fraco: rgba(0, 0, 0, 0.375);
     --verde-fraco: rgba(22, 163, 74, 0.5);
     --laranja-fraco: rgba(234, 88, 12, 0.6);
     --vermelho-fraco-2: rgba(220, 38, 38, 0.35);
