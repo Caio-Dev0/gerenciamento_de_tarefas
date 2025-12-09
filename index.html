@@ -9,31 +9,36 @@
 </head>
 <body>
     
-    <main class="task-container">
-        <header class="title-header">
+
+    <header class="task-app__header">
+        <div class="task-app__title-wrapper">
             <h1>Lista de tarefas</h1>
-        </header>
-        <form class="task-header">
-            <input class='task-input' type="text" aria-label="Adicione o nome de sua tarefa">
-            <fieldset class="priority">
-                <legend>Prioridade Tarefa</legend>
-                <label for="urgente"><input type="radio" name="prioridade" id="urgente" class="priority-urgente">Urgente</label>
-                <label for="importante"><input type="radio" name="prioridade" id="importante" class="priority-importante">Importante</label>  
-                <label for="rotineira"><input type="radio" name="prioridade" id="rotineira" class="priority-rotineira">Rotineira</label>
+        </div>
+    </header>
+    <main class="task-app__main">       
+        <form class="task-form">
+            <input class='task-form__input' type="text" aria-label="Adicione o nome de sua tarefa">
+            <fieldset class="task-form__priority">
+                <legend class="task-form__priority-legend">Prioridade Tarefa</legend>
+                <label for="urgente"><input type="radio" name="prioridade" id="urgente" class="task-form__priority-input task-form__priority-input--urgente">Urgente</label>
+                <label for="importante"><input type="radio" name="prioridade" id="importante" class="task-form__priority-input task-form__priority-input--importante">Importante</label>  
+                <label for="rotineira"><input type="radio" name="prioridade" id="rotineira" class="task-form__priority-input task-form__priority-input--rotineira">Rotineira</label>
             </fieldset>
-            <button class="btn-add btn">Adicionar tarefa</button>
+            <button class="task-form__button">Adicionar tarefa</button>
         </form>
 
         <ul class="task-list">
         </ul>
 
-        <dialog class="edit-task-modal">
-            <div class="container-edit-task">
-                <label for="task-edit-input">Edite sua tarefa</label>
-                <input type="text" name="task-edit-input" id="task-edit-input">
+        <dialog class="modal-edit">
+            <div class="modal-edit__content">
+                <label for="task-edit-input" class="modal-edit__label">Edite sua tarefa</label>
+                <input type="text" name="task-edit-input" id="task-edit-input" class="modal-edit__input">
             </div>
-            <button class="btn-update btn">Atualizar Tarefa</button>
-            <button class="btn-cancel btn">Cancelar</button>
+            <div>
+                <button class="modal-edit__button--update modal-edit__button">Atualizar Tarefa</button>
+                <button class="modal-edit__button--cancel modal-edit__button">Cancelar</button>
+            </div>
         </dialog>
     </main>
 
