@@ -84,7 +84,7 @@ body{
 
     & .task-form__input{
         width: 100%;
-        height: 2.5rem;
+        height: 3rem;
         padding: 0 var(--space-8);
         box-sizing: border-box;
         font-size: var(--font-14);
