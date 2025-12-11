@@ -78,6 +78,7 @@ body{
 .task-form{
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: var(--space-14) var(--space-40);
     gap: var(--space-8);
 
@@ -206,4 +207,23 @@ body{
         background: var(--verde-fraco);
     }
 
+    & .task-form__button{
+        padding: var(--space-8) var(--space-14);
+        border-radius: var(--radius-full);
+        border: 0;
+        transition: var(--transition);
+        cursor: pointer;
+    }
+    & .task-form__button:hover{
+        transform:translateY(-10%);
+        background-color: var(--roxo-fraco);
+        color: var(--branco);
+        box-shadow: var(--drop-shadow-roxo);
+    }
+
+    & .task-form__button:active{
+        transform:translateY(10%);
+        background-color: var(--roxo);
+        box-shadow: none; 
+    }
 }
