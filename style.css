@@ -8,6 +8,7 @@
     --font-12: 1.2rem;
     --font-8: 0.8rem;
     --preto-azulado: #1C232B;
+    --preto-azulado-2: #101720;
     --verde: #16A34A;
     --vermelho: #DC2626;
     --laranja: #EA580C;
@@ -306,5 +307,74 @@ body{
 
     & .ti-edit{
         color: var(--azul)
+    }
+
+}
+
+.modal-edit{
+    position: fixed;
+    top: 40%;
+    width: calc(100% - 8rem);
+    padding: var(--space-8) var(--space-14);
+    border: 1px solid black;
+    border-radius: var(--radius-10);
+    background-color: var(--preto-azulado-2);
+
+    & .modal-edit__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-8);
+        margin-bottom: var(--space-8);
+        font-size: var(--font-14);
+        color: var(--branco);
+
+    }
+
+    & .modal-edit__input{
+        width: 100%;
+        height: 2.5rem;
+        padding: 0 0.4rem;
+        border: 1px solid white;
+        border-radius: var(--radius-10);
+        outline: none;
+    }
+
+    & .modal-edit__actions{
+        display: flex;
+        justify-content: center;
+        gap: var(--space-8);
+
+        & .modal-edit__button{
+            padding: 0.4rem var(--space-8);
+            border: 1px solid;
+            border-radius: var(--radius-10);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        & .modal-edit__button--update{
+            color: var(--branco);
+            background-color: var(--verde-fraco);
+            border-color: var(--verde);
+        }
+        & .modal-edit__button--update:hover{
+            transform:translateY(-10%);
+        }
+        & .modal-edit__button--update:active{
+            transform:translateY(10%);
+        }
+
+        & .modal-edit__button--cancel{
+            color: var(--branco);
+            background-color: var(--vermelho-fraco);
+            border-color: var(--vermelho);
+        }
+        & .modal-edit__button--cancel:hover{
+            transform:translateY(-10%);
+        }
+        & .modal-edit__button--cancel:active{
+            transform:translateY(10%);
+        }
     }
 }
