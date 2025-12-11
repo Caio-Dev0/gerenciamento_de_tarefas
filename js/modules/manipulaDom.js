@@ -15,7 +15,7 @@ function criaBotaoRemover(deletarTarefa){
     const botaoRemoverTarefa = document.createElement("i")
     botaoRemoverTarefa.classList.add("btn-remover")
     botaoRemoverTarefa.classList.add("ti")
-    botaoRemoverTarefa.classList.add("ti-square-rounded-x")
+    botaoRemoverTarefa.classList.add("ti-square-rounded-x-filled")
     botaoRemoverTarefa.addEventListener("click", deletarTarefa)
     return botaoRemoverTarefa;
 }
