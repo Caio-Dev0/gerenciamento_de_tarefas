@@ -14,6 +14,7 @@ const botoesPrioridade = document.querySelectorAll("input[type='radio']")
 
 botaoAdicionarTarefa.addEventListener("click", () =>{
     adicionarTarefa(inputTarefa, containerListaTarefas, modaltarefa, inputEditaTarefa)
+    event.preventDefault()
 }) 
 
 botaoCancelaModal.addEventListener('click', () =>{
