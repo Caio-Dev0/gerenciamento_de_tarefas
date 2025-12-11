@@ -285,6 +285,10 @@ body{
         box-shadow: var(--drop-shadow-verde);
     }
 
+    & .task-list__tarefa:not(:hover){
+        transform: scale(0.99);
+    }
+
     & .task-list__tarefa > .ti{
         transform: scale(1.3);
         cursor: pointer;
