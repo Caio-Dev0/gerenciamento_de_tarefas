@@ -376,8 +376,22 @@ body{
         .task-list__tarefa > .ti:hover{
             transform: scale(1.6);
         }
+    }
+    /* Responsividade Desktop */
+    @media (min-width: 769px) AND (max-width: 1024px){
+        .task-list__tarefa{
+            grid-template-columns: 1fr 3rem 3rem;
+            height: 4rem;
+            font-size: var(--font-16);
+        }
+        .task-list__tarefa > .ti{
+            transform: scale(1.5);
+        }
+        .task-list__tarefa > .ti:hover{
+            transform: scale(1.7);
+        }
         
-}
+    }
 }
 .modal-edit{
     position: fixed;
