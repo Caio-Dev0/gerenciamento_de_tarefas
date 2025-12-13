@@ -3,6 +3,7 @@
 :root{
     --font-32: 3.2rem;
     --font-24: 2.4rem;
+    --font-20: 2.0rem;
     --font-16: 1.6rem;
     --font-14: 1.4rem;
     --font-12: 1.2rem;
@@ -424,7 +425,7 @@ body{
         .task-list__tarefa{
             grid-template-columns: 1fr 3.5rem 3.5rem;
             height: 5rem;
-            font-size: var(--font-16);
+            font-size: var(--font-20);
         }
         .task-list__tarefa > .ti{
             transform: scale(1.8);
