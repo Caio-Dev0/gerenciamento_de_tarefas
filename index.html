@@ -2,27 +2,46 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2">
     <title>Gerenciador de Tarefas</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
 </head>
 <body>
-    
-   
-    <div class="task-container">
-        <header class="title-header">
-            <h1>Lista de tarefas</h1>
-        </header>
-        <div class="task-header">
-            <input class='task-input' type="text">
-            <button class="btn-add btn">Adicionar tarefa</button>
+
+    <header class="task-app__header">
+        <div class="task-app__title-wrapper">
+            <h1>Aura List</h1>
         </div>
+    </header>
+    <main class="task-app__main">  
+        <form class="task-form">
+            <input class='task-form__input' type="text" aria-label="Adicione o nome de sua tarefa">
+            <fieldset class="task-form__priority">
+                <legend class="task-form__priority-legend">Prioridade Tarefa</legend>
+                <label for="urgente"><input type="radio" name="prioridade" id="urgente" class="task-form__priority-input task-form__priority-input--urgente">Urgente</label>
+                <label for="importante"><input type="radio" name="prioridade" id="importante" class="task-form__priority-input task-form__priority-input--importante">Importante</label>  
+                <label for="rotineira"><input type="radio" name="prioridade" id="rotineira" class="task-form__priority-input task-form__priority-input--rotineira">Rotineira</label>
+            </fieldset>
+            <input type="button" class="task-form__button" value="Adicionar tarefa"></input>
+        </form>
 
         <ul class="task-list">
         </ul>
-    </div>
+
+        <dialog class="modal-edit">
+            <div class="modal-edit__content">
+                <label for="task-edit-input" class="modal-edit__label">Edite sua tarefa</label>
+                <input type="text" name="task-edit-input" id="task-edit-input" class="modal-edit__input">
+            </div>
+            <div class="modal-edit__actions">
+                <button class="modal-edit__button--update modal-edit__button">Atualizar</button>
+                <button class="modal-edit__button--cancel modal-edit__button">Cancelar</button>
+            </div>
+        </dialog>
+    </main>
 
 
-<script src="/script.js"></script>
+<script src="/js/script.js" type="module"></script>
 </body>
 </html>
