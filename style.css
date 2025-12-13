@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
-
 :root{
     --font-24: 2.4rem;
     --font-20: 2.0rem;
@@ -40,30 +39,25 @@
     --radius-full: 999rem;
     --transition: 0.3s;
 }
-
 html, body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: var(--tipografia);
 }
-
 html{
     font-size: 62.5%
 }
-
 body{
     background-color: var(--preto-azulado);
 }
-
 .task-app__header{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 10vh;
     padding: var(--space-16) var(--space-80);
-    background-color: inherit;
-    
+    background-color: inherit;   
     & .task-app__title-wrapper{
         width: 100%;
         height: max-content;
@@ -98,14 +92,12 @@ body{
         }
     }
 }
-
 .task-form{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: var(--space-14) var(--space-40);
     gap: var(--space-8);
-
     & .task-form__input{
         width: 100%;
         height: 3rem;
@@ -131,7 +123,6 @@ body{
         transition: var(--transition);
 
     }
-
     & .task-form__priority{
         display: flex;
         align-items: center;
@@ -142,11 +133,9 @@ body{
         color: var(--branco);
         border-radius: var(--radius-10);
     }
-
     & .task-form__priority > legend{
         font-size: var(--font-16);
     }
-
     & .task-form__priority > label{
         padding: var(--space-8) var(--space-8);
         font-size: var(--font-12);
@@ -158,7 +147,6 @@ body{
     & .task-form__priority > label > .task-form__priority-input{
         display: none;
     }
-
     & .task-form__priority > label::before{
         content: '';
         display: inline-block;
@@ -170,67 +158,51 @@ body{
         background: white;
         transition: var(--transition);
     }
-
     /* Urgente */
-
     & .task-form__priority > label:has(.task-form__priority-input--urgente:hover){
         background-color: var(--vermelho-fraco-2);
     }
-
     & .task-form__priority > label:has(.task-form__priority-input--urgente:hover)::before{
         background-color: var(--vermelho-fraco);
     }
-
     & .task-form__priority > label:has(.task-form__priority-input--urgente:checked){
         border-color: var(--vermelho-fraco);
         background-color: var(--vermelho-fraco-2);
     }
-
     & .task-form__priority > label:has(.task-form__priority-input--urgente:checked)::before {
         border-color: var(--vermelho);
         background: var(--vermelho-fraco);
     }
-
-
-/* Importante */
+    /* Importante */
     & .task-form__priority > label:has(.task-form__priority-input--importante:hover){
         background-color: var(--laranja-fraco-2);
     }
-
     & .task-form__priority > label:has(.task-form__priority-input--importante:hover)::before{
         background-color: var(--laranja-fraco);
     }
-
     & .task-form__priority > label:has(.task-form__priority-input--importante:checked){
         border-color: var(--laranja-fraco);
         background-color: var(--laranja-fraco-2);
     }
-
     & .task-form__priority > label:has(.task-form__priority-input--importante:checked)::before {
         border-color: var(--laranja);
         background: var(--laranja-fraco);
     }
-
-/* Rotineira */
-
+    /* Rotineira */
     & .task-form__priority > label:has(.task-form__priority-input--rotineira:hover){
         background-color: var(--verde-fraco-2);
     }
-
     & .task-form__priority > label:has(.task-form__priority-input--rotineira:hover)::before{
         background-color: var(--verde-fraco);
     }
-
     & .task-form__priority > label:has(.task-form__priority-input--rotineira:checked){
         border-color: var(--verde-fraco);
         background-color: var(--verde-fraco-2)
     }
-
     & .task-form__priority > label:has(.task-form__priority-input--rotineira:checked)::before {
         border-color: var(--verde);
         background: var(--verde-fraco);
     }
-
     & .task-form__button{
         padding: var(--space-8) var(--space-14);
         border-radius: var(--radius-full);
@@ -244,7 +216,6 @@ body{
         color: var(--branco);
         box-shadow: var(--drop-shadow-roxo);
     }
-
     & .task-form__button:active{
         transform:translateY(10%);
         background-color: var(--roxo);
@@ -312,14 +283,12 @@ body{
         }
     }
 }
-
 .task-list{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--space-8);
     padding: 0 var(--space-40);
-
     & .task-list__tarefa{
         display: grid;
         grid-template-columns: 1fr 2rem 2rem;
@@ -334,42 +303,33 @@ body{
         border-radius: var(--radius-5);
         transition: var(--transition);
     }
-
     /* Urgente */
     & .urgente{
         background-color: var(--vermelho-fraco);
         border-color: var(--vermelho)
     }
-
     & .urgente:hover{
         box-shadow: var(--drop-shadow-vermelho);
     }
-
     /* Importante */
     & .importante{
         background-color: var(--laranja-fraco);
         border-color: var(--laranja)
     }
-
     & .importante:hover{
         box-shadow: var(--drop-shadow-laranja);
     }
-
     /*Rotineira */
-
     & .rotineira{
         background-color: var(--verde-fraco);
         border-color: var(--verde)
     }
-
     & .rotineira:hover{
         box-shadow: var(--drop-shadow-verde);
     }
-
     & .task-list__tarefa:not(:hover){
         transform: scale(0.99);
     }
-
     & .task-list__tarefa > .ti{
         transform: scale(1.3);
         cursor: pointer;
@@ -384,7 +344,6 @@ body{
     & .ti-square-rounded-x-filled{
         color: var(--vermelho-2);
     }
-
     & .ti-edit{
         color: var(--azul)
     }
@@ -427,7 +386,6 @@ body{
         .task-list__tarefa > .ti:hover{
             transform: scale(2);
         }
-        
     }
 }
 .modal-edit{
@@ -438,7 +396,6 @@ body{
     border: 1px solid black;
     border-radius: var(--radius-10);
     background-color: var(--preto-azulado-2);
-
     & .modal-edit__content{
         display: flex;
         flex-direction: column;
@@ -447,9 +404,7 @@ body{
         margin-bottom: var(--space-8);
         font-size: var(--font-14);
         color: var(--branco);
-
     }
-
     & .modal-edit__input{
         width: 100%;
         height: 2.5rem;
@@ -463,7 +418,6 @@ body{
         display: flex;
         justify-content: center;
         gap: var(--space-8);
-
         & .modal-edit__button{
             border: 1px solid;
             border-radius: var(--radius-10);
@@ -472,7 +426,6 @@ body{
             transition: var(--transition);
             
         }
-
         & .modal-edit__button--update{
             color: var(--branco);
             background-color: var(--verde-fraco);
@@ -484,7 +437,6 @@ body{
         & .modal-edit__button--update:active{
             transform:translateY(10%);
         }
-
         & .modal-edit__button--cancel{
             color: var(--branco);
             background-color: var(--vermelho-fraco);
@@ -513,17 +465,12 @@ body{
             padding: var(--space-8) var(--space-16);
             font-size: var(--font-16);
         }
-    } 
-
-
-    
+    }   
 }
-
 /* Responsividade Tablet */
 @media (min-width: 577px) AND (max-width: 768px){
     .modal-edit{
         width: 80%;
-
         & .modal-edit__content{
             margin-bottom: var(--space-14)
         }
@@ -545,7 +492,6 @@ body{
 @media (min-width: 769px) AND (max-width: 1024px){
     .modal-edit{
         width: 70%;
-
         & .modal-edit__content{
             margin-bottom: var(--space-14)
         }
@@ -560,14 +506,12 @@ body{
             padding: var(--space-8) var(--space-24);
             font-size: var(--font-16);
         }
-    }
-        
+    }    
 } 
 /* Responsividade Desktops maiores */
 @media (min-width: 1024px){
     .modal-edit{
         width: 70%;
-
         & .modal-edit__content{
             margin-bottom: var(--space-14)
         }
@@ -583,5 +527,4 @@ body{
             font-size: var(--font-16);
         }
     }
-        
 } 
