@@ -96,6 +96,12 @@ body{
             width: 35%;
         }
     }
+    /* Responsividade Desktops grandes */
+    @media (min-width: 1025px){
+        .task-app__title-wrapper{
+            width: 25%;
+        }
+    }
 }
 
 .task-form{
