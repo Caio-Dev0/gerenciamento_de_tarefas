@@ -428,7 +428,7 @@ body{
             font-size: var(--font-20);
         }
         .task-list__tarefa > .ti{
-            transform: scale(1.8);
+            transform: scale(1.6);  
         }
         .task-list__tarefa > .ti:hover{
             transform: scale(2);
