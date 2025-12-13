@@ -568,3 +568,25 @@ body{
     }
         
 } 
+/* Responsividade Desktops maiores */
+@media (min-width: 1024px){
+    .modal-edit{
+        width: 70%;
+
+        & .modal-edit__content{
+            margin-bottom: var(--space-14)
+        }
+        & .modal-edit__content > label{
+            font-size: var(--font-16);
+        }
+        & .modal-edit__input{
+            height: 4rem;
+            font-size: var(--font-16);
+        }
+        & .modal-edit__button{
+            padding: var(--space-8) var(--space-24);
+            font-size: var(--font-16);
+        }
+    }
+        
+} 
