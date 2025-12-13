@@ -419,6 +419,7 @@ body{
             transform:translateY(10%);
         }
     }
+    /* Responsividade Mobile */
     @media (min-width: 420px) AND  (max-width: 576px){
         .modal-edit__content{
             margin-bottom: var(--space-14)
@@ -435,4 +436,30 @@ body{
             font-size: var(--font-16);
         }
     } 
+
+
+    
 }
+
+/* Responsividade Tablet */
+@media (min-width: 577px) AND (max-width: 768px){
+    .modal-edit{
+        width: 80%;
+
+        & .modal-edit__content{
+            margin-bottom: var(--space-14)
+        }
+        & .modal-edit__content > label{
+            font-size: var(--font-16);
+        }
+        & .modal-edit__input{
+            height: 4rem;
+            font-size: var(--font-16);
+        }
+        & .modal-edit__button{
+            padding: var(--space-8) var(--space-16);
+            font-size: var(--font-16);
+        }
+    }
+        
+} 
