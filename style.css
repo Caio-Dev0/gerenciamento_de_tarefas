@@ -76,6 +76,12 @@ body{
         background-color: var(--roxo-fraco);
         border-radius: var(--radius-5)
     }
+    /* Responsividade Mobile */
+    @media (min-width: 420px) and (max-width: 576px){
+        .task-app__title-wrapper{
+            width: 70%;
+        }
+    }
 }
 
 .task-form{
@@ -229,6 +235,26 @@ body{
         background-color: var(--roxo);
         box-shadow: none; 
     }  
+    /* Responsividade  Mobile */
+    @media (min-width: 420px) and (max-width: 576px){
+        .task-form__input{
+            height: 4rem;
+            font-size: var(--font-16);
+        }
+        .task-form__priority{
+            width: 90%;
+        }
+        .task-form__priority > legend{
+            font-size: var(--font-24);
+        }
+        .task-form__priority > label{
+            font-size: var(--font-16);
+        }
+        .task-form__button{
+            padding: var(--space-8) var(--space-16);
+            font-size: var(--font-16);
+        }
+    }
 }
 
 .task-list{
@@ -237,8 +263,6 @@ body{
     align-items: center;
     gap: var(--space-8);
     padding: 0 var(--space-40);
-
-
 
     & .task-list__tarefa{
         display: grid;
@@ -308,9 +332,18 @@ body{
     & .ti-edit{
         color: var(--azul)
     }
-
+    @media (min-width: 420px) AND (max-width: 576px){
+        .task-list__tarefa{
+            grid-template-columns: 1fr 2.5rem 2.5rem;
+            height: 4rem;
+            font-size: var(--font-16);
+        }
+        .task-list__tarefa > .ti:hover{
+            transform: scale(1.6);
+        }
+        
 }
-
+}
 .modal-edit{
     position: fixed;
     top: 40%;
@@ -378,4 +411,21 @@ body{
             transform:translateY(10%);
         }
     }
+    @media (min-width: 420px) AND  (max-width: 576px){
+        .modal-edit__content{
+            margin-bottom: var(--space-14)
+        }
+        .modal-edit__content > label{
+            font-size: var(--font-16);
+        }
+        .modal-edit__input{
+            height: 4rem;
+            font-size: var(--font-16);
+        }
+        .modal-edit__button{
+            padding: var(--space-8) var(--space-16);
+            font-size: var(--font-16);
+        }
+    } 
+
 }
