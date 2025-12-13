@@ -82,6 +82,7 @@ body{
             width: 70%;
         }
     }
+    /* Responsividade tablet */
     @media (min-width: 577px) and (max-width: 768px){
         .task-app__title-wrapper{
             width: 50%;
@@ -338,7 +339,8 @@ body{
     & .ti-edit{
         color: var(--azul)
     }
-    @media (min-width: 420px) AND (max-width: 576px){
+    /* Responsividade Mobile e Tablet */
+    @media (min-width: 420px) AND (max-width: 768px){
         .task-list__tarefa{
             grid-template-columns: 1fr 2.5rem 2.5rem;
             height: 4rem;
