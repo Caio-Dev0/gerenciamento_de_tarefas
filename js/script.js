@@ -2,18 +2,19 @@ import { criaItemTarefa} from "./modules/manipulaDom.js";
 import { adicionarTarefa, carregarTarefas, carregarId, deletarTarefaClosure, atualizarTarefa, editarTarefaClosure, definePrioridade} from "./modules/tarefaLogica.js";
 import { fechaPopUp } from "./modules/ui.js";
 
-const botaoAdicionarTarefa = document.querySelector(".btn-add") 
-const inputTarefa = document.querySelector("input") 
+const botaoAdicionarTarefa = document.querySelector(".task-form__button") 
+const inputTarefa = document.querySelector(".task-form__input") 
 const containerListaTarefas = document.querySelector("ul") 
 let dadosArrayTarefas = carregarTarefas()
-const modaltarefa = document.querySelector(".edit-task-modal")
-const botaoCancelaModal = document.querySelector(".btn-cancel")
+const modaltarefa = document.querySelector(".modal-edit")
+const botaoCancelaModal = document.querySelector(".modal-edit__button--cancel")
 const inputEditaTarefa = document.querySelector("#task-edit-input")
-const botaoAtualizaTarefa = document.querySelector(".btn-update")
+const botaoAtualizaTarefa = document.querySelector(".modal-edit__button--update")
 const botoesPrioridade = document.querySelectorAll("input[type='radio']")
 
 botaoAdicionarTarefa.addEventListener("click", () =>{
     adicionarTarefa(inputTarefa, containerListaTarefas, modaltarefa, inputEditaTarefa)
+    event.preventDefault()
 }) 
 
 botaoCancelaModal.addEventListener('click', () =>{
