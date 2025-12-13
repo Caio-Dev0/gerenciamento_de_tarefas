@@ -419,6 +419,21 @@ body{
         }
         
     }
+    /* Responsividade Desktops maiores */
+    @media (min-width: 1024px){
+        .task-list__tarefa{
+            grid-template-columns: 1fr 3.5rem 3.5rem;
+            height: 5rem;
+            font-size: var(--font-16);
+        }
+        .task-list__tarefa > .ti{
+            transform: scale(1.8);
+        }
+        .task-list__tarefa > .ti:hover{
+            transform: scale(2);
+        }
+        
+    }
 }
 .modal-edit{
     position: fixed;
