@@ -505,6 +505,7 @@ body{
     }
         
 } 
+/* Responsividade Desktop */
 @media (min-width: 769px) AND (max-width: 1024px){
     .modal-edit{
         width: 70%;
