@@ -82,6 +82,11 @@ body{
             width: 70%;
         }
     }
+    @media (min-width: 577px) and (max-width: 768px){
+        .task-app__title-wrapper{
+            width: 50%;
+        }
+    }
 }
 
 .task-form{
@@ -235,8 +240,8 @@ body{
         background-color: var(--roxo);
         box-shadow: none; 
     }  
-    /* Responsividade  Mobile */
-    @media (min-width: 420px) and (max-width: 576px){
+    /* Responsividade  Mobile e Tablet*/
+    @media (min-width: 420px) and (max-width: 768px){
         .task-form__input{
             height: 4rem;
             font-size: var(--font-16);
@@ -255,6 +260,7 @@ body{
             font-size: var(--font-16);
         }
     }
+
 }
 
 .task-list{
@@ -427,5 +433,4 @@ body{
             font-size: var(--font-16);
         }
     } 
-
 }
