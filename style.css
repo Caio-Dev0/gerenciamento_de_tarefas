@@ -88,6 +88,12 @@ body{
             width: 50%;
         }
     }
+    /* Responsividade Desktop */
+    @media (min-width: 769px) and (max-width: 1024px){
+        .task-app__title-wrapper{
+            width: 35%;
+        }
+    }
 }
 
 .task-form{
