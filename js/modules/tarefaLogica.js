@@ -85,7 +85,11 @@ function definePrioridade(evento){
 
 function carregarTarefas(){
     const dadosArrayTarefas = JSON.parse(localStorage.getItem("Dados Tarefas"))
-    arrayTarefas = dadosArrayTarefas
+    if(dadosArrayTarefas === null){
+        arrayTarefas === arrayTarefas
+    }else{
+        arrayTarefas = dadosArrayTarefas;
+    }
     return dadosArrayTarefas
 }
 
