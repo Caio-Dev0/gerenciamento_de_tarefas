@@ -1,13 +1,22 @@
-# 📘 Lista de Tarefas (To-Do List)
+# 📘 Aura-List
 
 ---
 
 ## 🧩 Sobre o projeto
 
-A **Lista de Tarefas** é uma aplicação web que permite organizar atividades do dia a dia.
-O usuário pode **adicionar**  e **excluir tarefas**, com as informações salvas automaticamente no navegador através do **LocalStorage**.
+o **Aura-List** é uma aplicação web que permite organizar tarefas do dia a dia. O usuário pode **adicionar, excluir e editar suas tarefas**, além de poder escolher qual o nível de prioridade dessa tarefa **(Urgente, Importante ou Rotineira)**, com as informações salvas automaticamente no navegador através do **LocalStorage**.
 
-A interface é simples, intuitiva e responsiva, podendo ser usada tanto em computadores quanto em celulares.
+A interface é simples, minimalista e responsiva, podendo ser usada tanto em computadores quanto em tablets e celulares.
+
+---
+## Preview no Desktop
+
+<img width="1593" height="718" alt="image" src="https://github.com/user-attachments/assets/3d3e9e1c-8176-43c3-8868-827556c6b0b8" />
+
+## Preview no Mobile
+
+<img width="250" height="649" alt="image" src="https://github.com/user-attachments/assets/0c009ec8-569b-40a4-a2db-36e50d2185af" />
+
 
 ---
 
@@ -17,7 +26,9 @@ O projeto tem como foco:
 
 * Reforçar fundamentos de JavaScript (Arrays, Objetos e estruturas básicas)
 * Aplicar boas práticas de código limpo
-* Demonstrar boas práticas de organização de branches com Git.
+* Demonstrar práticas de organização de branches no Git com GitFlow.
+* Separar as responsabilidades do código JS em módulos.
+* Utilizar boas práticas de UI/UX
 
 ---
 
@@ -33,10 +44,17 @@ O projeto tem como foco:
 ## 📁 Estrutura de pastas
 
 ```
-📂 todo-list/
+📂 aura-list/
+ ┣ 📂 js
+ ┣  ┣ 📂 modules
+ ┣  ┣  ┣ 📜 manipulaDOM.js
+ ┣  ┣  ┣ 📜 storage.js
+ ┣  ┣  ┣ 📜 tarefaLogica.js
+ ┣  ┣  ┗ 📜 u.js
+ ┣  ┗  📜 script.js
  ┣ 📜 index.html
- ┣ 📜 style.css
- ┗ 📜 script.js
+ ┗ 📜 style.css
+  
 ```
 ---
 
@@ -44,7 +62,7 @@ O projeto tem como foco:
 
 ### Clone este repositório:
 
-* git clone: https://github.com/SeuUsuario/todo-list
+* git clone: https://github.com/SeuUsuario/aura-list
 
 
 Abra o arquivo index.html em seu navegador.
@@ -57,11 +75,15 @@ Abra o arquivo index.html em seu navegador.
 
 * Remover tarefas
 
+* Editar Tarefa
+
+* Escolher a prioridade da Tarefa
+
 * Validação para impedir tarefas vazias
 
 * Armazenamento local (localStorage)
 
-* Interface simples e responsiva
+* Interface minimalista e responsiva
 
 ---
 
@@ -76,19 +98,18 @@ Abra o arquivo index.html em seu navegador.
 * Aplicação de armazenamento local
 
 * Criação de layout responsivo com CSS Grid/Flexbox
+
+* Modularização do JS para separação de responsabilidades
+
+* Prototipação de design no Figma
+
+* Uso de atributos ARIA para acessibilidade
+
 ---
 
 ## 🧰 Próximos passos
 
-* Redesign completo da interface no Figma
-
-* Criar sistema de classificação (Urgente, importante, rotineira)
-
-* Implementar edição de tarefas
-
-* Aprimorar animações e acessibilidade
-
-* Alternar entre modo claro e escuro (Dark Mode)
+Este projeto atingiu seu objetivo inicial de consolidar os fundamentos de JavaScript Vanilla e manipulação de DOM. Para manter o foco no aprendizado de novas tecnologias, o desenvolvimento desta versão foi pausado para dar lugar à V2 futuramente, que será reconstruída do zero utilizando React.
 
 ---
 
